@@ -2,41 +2,211 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>(토) 관현악 예배위원 모임 출결</title><meta name="theme-color" content="#174d3d">
+<title>관현악, 군악대 출결 관리</title><meta name="theme-color" content="#174d3d">
 <style>
 :root{font-family:system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:#172b25;background:#f4f7f5;font-synthesis:none}*{box-sizing:border-box}body{margin:0}main{max-width:1100px;margin:0 auto;padding:20px 14px 70px}h1{font-size:clamp(22px,4vw,30px);margin:0 0 7px}h2{font-size:19px;margin:0 0 12px}p{line-height:1.6;margin:7px 0}.muted{color:#52665e;font-size:13px}.section{background:white;border:1px solid #dce5de;border-radius:15px;padding:18px;margin:16px 0;box-shadow:0 2px 14px #1d3c2c08}.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.row>*{min-width:0}button,input,select,textarea{font:inherit}button{cursor:pointer;border:0;border-radius:9px;padding:11px 14px;font-weight:700;background:#174d3d;color:white}button.secondary{background:#eaf1ed;color:#174d3d}button.outline{background:#fff;color:#174d3d;border:1px solid #9eb7aa}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #92cbb0;outline-offset:1px}input,select,textarea{background:#fff;border:1px solid #b8ccc0;border-radius:8px;padding:10px;color:#142b21}textarea{width:100%;min-height:128px;line-height:1.65;resize:vertical}input[type=date]{min-width:220px;max-width:100%;font-size:16px}.date-select{min-width:80px;max-width:100%;font-size:16px}.date-display{display:block;width:100%;padding:12px;border-radius:9px;background:#edf5ef;font-size:18px;white-space:nowrap;overflow-x:auto}.stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}.stat{background:#edf5ef;border-radius:10px;padding:11px;text-align:center}.stat b{font-size:24px;display:block}.stat small{font-size:12px;color:#466352;overflow-wrap:anywhere}.notice{background:#fff6dd;border-left:3px solid #d6a539;padding:11px;border-radius:5px;margin-top:12px;white-space:pre-line}.success{background:#e9f6ed;border-left:3px solid #45a06b}.tablewrap{overflow:auto;border:1px solid #dce5de;border-radius:9px;max-height:500px}table{width:100%;border-collapse:collapse}th,td{border-bottom:1px solid #e7eee9;padding:8px;text-align:left;font-size:13px}th{background:#eff5f1;position:sticky;top:0;z-index:1}td:first-child{white-space:nowrap;font-weight:700}td input,td select{min-width:105px;width:100%;padding:8px;font-size:13px}td select{min-width:88px}.small{font-size:12px}.tag{font-size:11px;background:#e2ebe5;padding:3px 6px;border-radius:5px;color:#245442}.roster-row{display:grid;grid-template-columns:70px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid #e7eee9}.roster-inst{font-weight:700;color:#174d3d;padding-top:6px}.roster-members{display:flex;flex-wrap:wrap;gap:6px}.roster-member{display:inline-flex;align-items:center;gap:2px;border:1px solid #dce5de;border-radius:8px;background:#f9fbf9;padding:3px 5px}.roster-member span{padding:0 3px;font-size:14px}.roster-member button{padding:4px 6px;font-size:12px;border-radius:5px;background:#eaf1ed;color:#174d3d}.roster-member button:not(.remove){color:#15518a;background:#e7f0ff}.roster-member button.remove{color:#9b3c26;background:#fbece9}.result{white-space:pre-wrap;font-size:14px;line-height:1.9;background:#fbfdfa;border:1px solid #dae8dd;border-radius:9px;padding:15px;overflow-wrap:anywhere;min-height:160px}.instrument{display:grid;grid-template-columns:84px 1fr;border:1px solid #dae6dd;border-bottom:0;margin:10px 0}.instrument>div{padding:9px;border-bottom:1px solid #dae6dd}.instrument .instname{font-weight:700;background:#f0f6f1}.instrument .instnames{line-height:1.7}.previewArea{margin-top:14px}.hint{font-size:12px;color:#597065}.warn{color:#9b3c26}.hidden{display:none}.pill{display:inline-block;padding:4px 9px;border-radius:100px;background:#e8f2ec;color:#23563c;font-size:12px;font-weight:700}footer{text-align:center;color:#677e70;font-size:12px;margin:25px 0}.tabnav{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.tabnav a{color:#16553f;text-decoration:none;background:#e4eee8;border-radius:20px;padding:8px 12px;font-size:13px;font-weight:700}@media(max-width:640px){main{padding:14px 10px 70px}.section{padding:13px}.stats{grid-template-columns:repeat(2,1fr)}.tablewrap{max-height:none}table,tbody,tr,td{display:block;width:100%}thead{display:none}tbody{display:grid;grid-template-columns:1fr;gap:8px;padding:8px}tr{border:1px solid #dbe5dc;border-radius:10px;padding:8px;background:#fff}td{display:grid;grid-template-columns:99px minmax(0,1fr);gap:5px;align-items:center;border:0;padding:3px}td::before{content:attr(data-label);font-size:12px;color:#567064}td:first-child{font-size:15px}td input,td select{width:100%;min-width:0}.instrument{grid-template-columns:63px 1fr}.result{font-size:13px}}
 .roster-total{vertical-align:middle;margin-left:5px}.roster-member{cursor:grab;user-select:none;touch-action:pan-y}.roster-member:active{cursor:grabbing}.roster-member.selected{border-color:#18764f;background:#def5e7;box-shadow:0 0 0 2px #a8d9b8}.roster-member.drag-over{outline:2px dashed #18764f;outline-offset:2px}.roster-member button{cursor:pointer}
-.full-template{display:block;min-height:440px;margin-top:8px;font-size:14px;line-height:1.6;white-space:pre;overflow:auto;font-family:inherit}.compact-add{margin-top:12px}.compact-add button{padding:7px 12px;font-size:13px}.inst-actions{display:flex;gap:3px;margin-top:4px}.inst-actions button{padding:3px 5px;min-width:24px;font-size:12px;border-radius:5px;background:#eaf1ed;color:#174d3d}.inst-actions button.remove{color:#9b3c26;background:#fbece9}.roster-inst .inst-title{font-weight:700;cursor:pointer;display:inline-block;min-width:38px;overflow-wrap:anywhere}.roster-inst .inst-title.target-ready{outline:2px solid #18764f;outline-offset:3px;border-radius:3px}.roster-member.long-press{background:#c9eed9;border-color:#18764f}.roster-inst.drop-ready,.roster-row.drop-ready{background:#edf8f0;outline:2px dashed #18764f;outline-offset:-2px}.manager-list{display:grid;gap:7px;margin-top:10px}.manager-item{display:flex;align-items:center;gap:8px;border:1px solid #dce5de;border-radius:9px;padding:7px 9px;background:#fbfdfb}.manager-item .manager-title{flex:1;min-width:0;overflow-wrap:anywhere;font-weight:600}.manager-item .manager-count{color:#52665e;font-size:12px}.manager-item button{padding:6px 9px;font-size:12px;flex-shrink:0}.manager-item button:disabled{opacity:.38;cursor:not-allowed}.subhead{font-size:15px;margin:18px 0 6px}@media(max-width:640px){.full-template{min-height:410px;font-size:13px}.manager-item{flex-wrap:wrap}.roster-row{grid-template-columns:72px 1fr}.roster-member{touch-action:pan-y}}
+.full-template{display:block;min-height:440px;margin-top:8px;font-size:14px;line-height:1.6;white-space:pre;overflow:auto;font-family:inherit}.compact-add{margin-top:12px}.compact-add button{padding:7px 12px;font-size:13px}.roster-inst .inst-title{font-weight:700;cursor:pointer;display:inline-block;min-width:38px;overflow-wrap:anywhere}.roster-inst .inst-title.target-ready{outline:2px solid #18764f;outline-offset:3px;border-radius:3px}.roster-member.long-press{background:#c9eed9;border-color:#18764f}.roster-inst.drop-ready,.roster-row.drop-ready{background:#edf8f0;outline:2px dashed #18764f;outline-offset:-2px}.manager-list{display:grid;gap:7px;margin-top:10px}.manager-item{display:flex;align-items:center;gap:8px;border:1px solid #dce5de;border-radius:9px;padding:7px 9px;background:#fbfdfb}.manager-item .manager-title{flex:1;min-width:0;overflow-wrap:anywhere;font-weight:600}.manager-item .manager-count{color:#52665e;font-size:12px}.manager-item button{padding:6px 9px;font-size:12px;flex-shrink:0}.manager-item button:disabled{opacity:.38;cursor:not-allowed}.subhead{font-size:15px;margin:18px 0 6px}@media(max-width:640px){.full-template{min-height:410px;font-size:13px}.manager-item{flex-wrap:wrap}.roster-row{grid-template-columns:72px 1fr}.roster-member{touch-action:pan-y}}
+
+/* 사람 이름 카드는 이름 길이와 상관없이 모두 동일한 크기 */
+.roster-members{align-content:start;align-items:start;gap:7px}
+.roster-member{width:124px;min-width:124px;max-width:124px;height:40px;min-height:40px;flex:0 0 124px;display:flex;justify-content:space-between;align-items:center;gap:3px;padding:4px 5px}
+.roster-member span{flex:1;min-width:0;padding:0;text-align:center;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:13px;line-height:1.35}
+.roster-member button{width:23px;min-width:23px;max-width:23px;height:27px;flex:0 0 23px;display:flex;align-items:center;justify-content:center;padding:0;font-size:13px}
+/* 악기 목록 자체도 이름처럼 길게 누르기 / 드래그 / 선택 후 이동 */
+.roster-inst .inst-title{display:flex;align-items:center;justify-content:center;width:100%;min-height:40px;padding:6px 2px;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y;border:1px solid transparent;border-radius:7px}
+.roster-inst .inst-title:active{cursor:grabbing}
+.roster-inst .inst-title.instrument-selected{background:#def5e7;border-color:#18764f;box-shadow:0 0 0 1px #a8d9b8}
+.roster-inst .inst-title.instrument-target{background:#edf8f0;outline:2px dashed #18764f;outline-offset:1px}
+.roster-row.instrument-drag-over{background:#edf8f0;outline:2px dashed #18764f;outline-offset:-2px}
+@media(max-width:640px){.roster-row{grid-template-columns:62px minmax(0,1fr);gap:8px}.roster-member{width:124px;min-width:124px;max-width:124px;flex-basis:124px}}
+
+/* 불참 사유: 클릭 선택 / 데스크톱 드래그 / 모바일 항목 드래그 */
+.reason-item{min-height:48px;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y}
+.reason-item:active{cursor:grabbing}
+.reason-item .manager-title{cursor:pointer;padding:7px 0}
+.reason-item.selected{border-color:#18764f;background:#def5e7;box-shadow:0 0 0 1px #a8d9b8}
+.reason-item.drag-over{outline:2px dashed #18764f;outline-offset:1px;background:#edf8f0}
+.reason-item.touch-dragging{border-color:#18764f;background:#def5e7}
+@media(max-width:640px){.reason-item{gap:6px}.reason-item .manager-title{min-width:90px;flex:1}}
+
+/* 다중 모임 및 팀별 명단 */
+.roster-tabs,.output-tabs{display:flex;gap:8px;margin:12px 0 16px;flex-wrap:wrap}
+.roster-tabs button,.output-tabs button{flex:1;min-width:145px}
+.roster-tabs button.active,.output-tabs button.active{background:#174d3d;color:#fff}
+.sunday-members{display:none}
+.sunday-members label{display:flex;align-items:center;gap:7px;padding:7px;border:1px solid #e1e9e2;background:#f9fbfa;border-radius:7px;font-size:13px;cursor:pointer}
+.sunday-members input{accent-color:#174d3d;width:17px;height:17px;flex:0 0 17px}
+.sunday-paste{min-height:75px;margin-top:7px}
+.team-name-actions{display:flex;gap:4px;align-items:center}
+.team-roster-note{font-size:12px;color:#52665e;margin-top:10px}
+.roster-row .roster-inst{min-width:0}
+.roster-row.team-row{grid-template-columns:118px 1fr}
+.roster-row.team-row .inst-title{justify-content:flex-start;padding-left:6px;min-height:34px}
+.team-row .roster-inst .mini-action{width:30px;height:29px;min-width:30px;padding:0;display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;background:#e9f1eb;color:#1c503c;margin:0;border-radius:6px}
+.team-row .roster-inst .mini-action.remove{background:#fbece9;color:#9b3c26}
+.team-row .roster-inst .team-name-actions{display:flex;align-items:center;justify-content:flex-start;gap:5px;margin:3px 0 4px 5px}
+.team-row .roster-inst .inst-title{font-weight:750}
+#teamList .roster-member{width:142px;min-width:142px;max-width:142px;flex-basis:142px;justify-content:space-between}
+#teamList .roster-member button{display:flex;width:20px;min-width:20px;max-width:20px;flex-basis:20px;height:25px;font-size:12px}
+#teamList .roster-member span{font-size:13px}
+ .team-row.drop-ready{outline:2px dashed #18764f}
+.part-stat b{font-size:20px;line-height:1.35}
+.part-stat .part-teams{display:block;font-size:12px;line-height:1.45;margin-top:5px;font-weight:600;color:#345a46;overflow-wrap:anywhere}
+.team-row .inst-title,.reason-item .manager-title{touch-action:none;cursor:grab}
+.team-row .inst-title:active,.reason-item .manager-title:active{cursor:grabbing}
+.reason-item{cursor:grab}
+.team-footer{margin-top:18px;padding:15px;border:1px solid #dce5de;background:#f9fbfa;border-radius:11px}
+.team-footer .row{margin:9px 0}
+.team-footer input{min-width:135px;flex:1}
+.team-footer select{min-width:90px;max-width:200px}
+.team-footer h3{margin:0 0 10px;font-size:15px}
+@media(max-width:640px){.team-footer .row>*{min-width:0}.team-footer input{min-width:130px}.team-footer select{max-width:100%}}
+.result{max-height:none;white-space:pre-wrap}
+@media(max-width:640px){.roster-row.team-row{grid-template-columns:92px minmax(0,1fr)}.roster-tabs button,.output-tabs button{min-width:0}.sunday-members{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* 불참 사유 목록: 화면 크기와 관계없이 한 줄에 두 항목 표시 */
+#reasonList{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;align-items:stretch}
+#reasonList .reason-item{min-width:0;min-height:50px;gap:6px;padding:7px 9px;flex-wrap:nowrap}
+#reasonList .reason-item .manager-title{min-width:0;flex:1 1 auto;overflow-wrap:anywhere;padding:6px 0}
+#reasonList .reason-item button{flex:0 0 29px;width:29px;height:30px;padding:0;display:flex;align-items:center;justify-content:center;font-size:13px}
+#reasonList .reason-item .tag{flex:0 0 auto;white-space:nowrap}
+@media(max-width:640px){
+ #reasonList{gap:6px}
+ #reasonList .reason-item{gap:4px;padding:6px;min-height:47px;flex-wrap:wrap}
+ #reasonList .reason-item .manager-title{min-width:0;flex:1 1 100%;padding:1px 0}
+ #reasonList .reason-item button{flex:0 0 27px;width:27px;height:27px}
+ #reasonList .reason-item .tag{font-size:10px;padding:2px 4px}
+}
+
+/* 모바일 악기별·파트별 명단: 가로 3명씩 표시하여 스크롤 길이를 줄인다. */
+@media(max-width:640px){
+ #rosterList .roster-row,#teamList .roster-row.team-row{display:block;grid-template-columns:none;padding:9px 0}
+ #rosterList .roster-inst,#teamList .roster-inst{padding:0 0 7px;min-width:0}
+ #rosterList .roster-inst .inst-title{display:inline-flex;width:auto;min-width:60px;min-height:30px;padding:4px 8px;justify-content:flex-start}
+ #teamList .roster-inst .inst-title{width:auto;display:inline-flex;min-height:30px;max-width:100%}
+ #teamList .team-name-actions{display:inline-flex!important;vertical-align:middle;margin:0 0 0 6px!important}
+ #teamList .mini-action{width:25px!important;height:25px!important;min-width:25px!important;font-size:14px!important}
+ #rosterList .roster-members,#teamList .roster-members{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;align-content:start;align-items:start}
+ #rosterList .roster-member,#teamList .roster-member{width:100%;max-width:none;min-width:0;flex:none;height:39px;min-height:39px;padding:3px 2px;gap:1px;border-radius:7px}
+ #rosterList .roster-member span,#teamList .roster-member span{font-size:12px;line-height:1.2;min-width:0;flex:1 1 auto;letter-spacing:-.35px}
+ #rosterList .roster-member button,#teamList .roster-member button{width:19px!important;min-width:19px!important;max-width:19px!important;flex:0 0 19px!important;height:26px!important;padding:0;font-size:12px!important}
+ #rosterList .roster-members>.hint,#teamList .roster-members>.hint{grid-column:1/-1}
+ .team-footer{margin-top:6px;margin-bottom:15px}
+}
+@media(max-width:355px){
+ #rosterList .roster-member,#teamList .roster-member{gap:0;padding:3px 1px}
+ #rosterList .roster-member span,#teamList .roster-member span{font-size:11px;letter-spacing:-.55px}
+ #rosterList .roster-member button,#teamList .roster-member button{width:17px!important;min-width:17px!important;max-width:17px!important;flex-basis:17px!important;font-size:11px!important}
+}
+/* 브라우저 로컬 저장 안내: 눈에 띄는 빨간색 테두리 박스 */
+#headerStorageNote{margin:16px 0 4px;padding:14px 16px;border:2px solid #cf4444;border-radius:6px;background:#fff2f2;color:#9b2020;font-size:16px;font-weight:700;line-height:1.55;word-break:keep-all}
+/* 악기별·파트별 명단에 공통으로 쓰는 연한 초록색 인원 추가 박스 */
+.member-add-panel{background:#edf6f0;border:1px solid #bdd8c5;border-radius:12px;padding:14px 15px;margin:12px 0 17px}
+.member-add-panel h3{font-size:15px;margin:0 0 11px;color:#184d3a}
+.member-add-panel .row{gap:8px;margin:0}
+.member-add-panel label{font-size:14px;font-weight:650;color:#204333;white-space:nowrap}
+.member-add-panel select{min-width:87px;max-width:160px}
+.member-add-panel input{flex:1;min-width:155px;width:auto}
+.member-add-panel button{white-space:nowrap}
+@media(max-width:640px){
+ #headerStorageNote{font-size:15px;padding:12px}
+ .member-add-panel{padding:12px 10px}
+ .member-add-panel .row{display:grid;grid-template-columns:auto minmax(0,1fr) auto minmax(0,1fr);gap:7px;align-items:center}
+ .member-add-panel select{min-width:0;max-width:100%;width:100%}
+ .member-add-panel input{grid-column:1 / 4;width:100%;min-width:0}
+ .member-add-panel button{grid-column:4;min-width:0;padding:10px 7px;font-size:13px}
+}
+@media(max-width:360px){.member-add-panel label{font-size:12px}.member-add-panel .row{gap:5px}}
+
+.dual-results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+.dual-results .previewArea{min-width:0;margin-top:0;background:#fbfdfa;border:1px solid #dae8dd;border-radius:12px;padding:13px}
+.dual-results .result{background:#fff;min-height:460px;max-height:630px;overflow:auto;font-size:13px}
+.result-title{justify-content:space-between;margin-bottom:5px}.result-title h2{margin:0;font-size:16px}
+.result-title button{padding:8px 10px;font-size:12px}
+.dual-results .hint{margin-bottom:12px}
+/* Desktop: keep both result panels side by side; compact screens: show one at a time. */
+.mobile-output-tabs{display:none}
+@media(max-width:850px){
+ .mobile-output-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:16px 0 0}
+ .mobile-output-tabs button{min-width:0;width:100%;border:1px solid #b8ccc0;background:#eaf1ed;color:#174d3d;padding:12px 6px;font-size:14px}
+ .mobile-output-tabs button.active{background:#174d3d;color:#fff;border-color:#174d3d}
+ .dual-results{grid-template-columns:1fr;margin-top:12px}
+ .dual-results[data-mobile-view="traditional"] [data-output-panel="final"],
+ .dual-results[data-mobile-view="final"] [data-output-panel="traditional"]{display:none}
+ .dual-results .result{min-height:240px;max-height:min(60vh,540px);overflow:auto;-webkit-overflow-scrolling:touch}
+}
+
 </style>
 </head>
 <body><main>
-<header><span class="pill">모바일 · PC · 엑셀 불필요 · 명단·양식·사유 관리</span><h1>(토) 관현악 예배위원 모임 출결</h1><p class="muted">현재 57명 기준 · 슬래시(/) 구분 텍스트 붙여넣기 · 결과 복사</p><nav class="tabnav"><a href="#bulk">출결 붙여넣기</a><a href="#roster">관현악 예배위원 명단 관리</a><a href="#template">출결 양식 관리</a><a href="#reasons">불참 사유 관리</a><a href="#output">출결 결과</a></nav></header>
-<section class="section"><h2>① 모임 날짜</h2><div class="row"><label for="yearSelect">날짜 선택</label><select id="yearSelect" class="date-select" aria-label="연도"></select><select id="monthSelect" class="date-select" aria-label="월"></select><select id="daySelect" class="date-select" aria-label="일"></select><button class="secondary" id="todayBtn">오늘</button><strong id="dateLabel" class="date-display" aria-live="polite"></strong></div><p class="muted">제목은 선택한 날짜로 <b>11. 11.(수) 관현악 예배위원 모임 출결</b> 형식으로 표시됩니다.</p></section>
-<section class="section" id="bulk"><h2>② 출결 붙여넣기</h2><p>한 사람당 한 줄씩 입력하세요. <b>이름/상태</b>만 입력해도 되고, 필요한 정보만 뒤에 추가하면 됩니다.</p><p><b>이름/상태/사유/상세사유/부분참석시간</b> <span class="muted">(뒤 항목은 생략 가능)</span></p><textarea id="bulkInput" spellcheck="false" placeholder=""></textarea><div class="row" style="margin-top:10px"><button id="applyBulk">붙여넣은 출결 적용</button><button class="secondary" id="clearBulk">입력창 비우기</button><button class="outline" id="example">예시 넣기</button><button class="outline" id="reset">전체 출결 초기화</button></div><div id="bulkMessage" class="notice hidden" role="status"></div><p class="hint">예: <code>이채원/출</code> · <code>최진희/미보고</code> · <code>이수형/결/직장</code> · <code>김지선/결/개인사/학교</code> · <code>정신/파트미보고</code>. <code>강은실/개인사/개인연습</code>처럼 상태 대신 정해진 불참 사유를 입력하면 자동으로 결석 처리합니다. 중간 항목을 건너뛸 때만 빈 칸을 <code>/</code>로 남기세요. 예: <code>박범성/부분///20:00~</code>. <b>부분 참석은 사유(3번째 항목)만 출력하며 상세사유(4번째)는 출력하지 않습니다.</b> 출력 시 물결표(~)는 휴대폰 취소선 자동 적용을 막기 위해 모양이 비슷한 문자(～)로 표시됩니다. 명단에 없는 이름은 적용되지 않습니다.</p></section>
-<section class="section" id="roster"><h2>③ 관현악 예배위원 명단 관리 <span id="rosterTotal" class="pill roster-total">총 57명</span></h2><p class="muted">이름을 꾹 누르거나 클릭해 선택한 뒤 다른 악기 이름 또는 이동할 이름을 누르면 옮겨집니다. PC에서는 드래그해서 이동할 수 있습니다. 악기 추가는 위 악기 선택 목록 맨 아래의 ＋ 악기 추가를 누르세요. ✎ 이름·악기 수정 · × 삭제</p><div class="row" style="margin:12px 0 15px"><label for="rosterInstrument">악기</label><select id="rosterInstrument" aria-label="추가할 악기"></select><input id="rosterName" type="text" placeholder="추가할 이름" aria-label="추가할 이름" style="flex:1;min-width:150px"><button id="addRoster">인원 추가</button></div><div id="rosterList"></div><div id="rosterMessage" class="notice hidden" role="status"></div><p class="hint">새 악기도 ④ 양식과 ⑥ 출결 결과에 자동 반영됩니다. 변경한 명단은 현재 브라우저에 저장됩니다. 다른 기기와 자동 공유하려면 온라인 데이터베이스 연결이 필요합니다.</p></section>
-<section class="section" id="template"><h2>④ 출결 양식 관리</h2><p class="muted">기존 고정 양식 그대로 한 칸에서 편집합니다. <b>악기 이름 줄은 이동하거나 문구를 바꿀 수 있으며</b>, 새로운 악기는 자동으로 줄이 추가됩니다.</p><label for="fullTemplate"><b>출결 출력 양식</b></label><textarea id="fullTemplate" class="full-template" spellcheck="false" aria-label="전체 출결 양식"></textarea><p class="hint">날짜와 인원은 <code>{날짜}</code>, <code>{참석}</code>, <code>{부분}</code>, <code>{불참}</code>, <code>{미보고}</code>로 자동 표시합니다. 불참 사유 목록을 표시하는 <code>{불참사유별}</code>도 유지해 주세요. 악기 줄은 기존처럼 <code>Vn.</code>, <code>Va.</code> 형태로 두면 참석자 이름이 자동으로 들어갑니다.</p><div class="row" style="margin-top:12px"><button id="saveTemplate">양식 저장</button><button class="outline" id="resetTemplate">기본 양식으로 되돌리기</button><button class="secondary" id="previewTemplate">⑥ 결과 확인</button></div><div id="templateMessage" class="notice hidden" role="status"></div></section>
-<section class="section" id="reasons"><h2>⑤ 불참 사유 관리</h2><p class="muted">불참 사유를 추가하거나, 출력 순서를 바꾸고 이름을 수정·삭제할 수 있습니다. 변경한 순서대로 ⑥의 불참 사유별 명단이 정리됩니다.</p><div class="row" style="margin:12px 0"><label for="newReason">새 불참 사유</label><input id="newReason" type="text" placeholder="추가할 사유 입력" style="flex:1;min-width:150px"><button id="addReason">사유 추가</button></div><div id="reasonList" class="manager-list"></div><p class="hint">미보고는 출결 상태와 연결된 기본 항목이라 이름 수정·삭제는 할 수 없으며 순서만 변경할 수 있습니다. 현재 출결에서 사용 중인 사유는 삭제할 수 없습니다.</p><div id="reasonMessage" class="notice hidden" role="status"></div></section>
-<section class="section" id="output"><h2>⑥ 출결 결과</h2><div id="stats" class="stats"></div><div id="checkMessage" class="notice" role="status"></div><div class="row" style="margin-top:14px"><button id="copyAll">전체 출결 텍스트 복사</button><button class="secondary" id="copyAtt">참석 부분만 복사</button><button class="secondary" id="copyAbsent">불참 부분만 복사</button></div><div class="previewArea"><h2>복사용 최종 텍스트</h2><div id="result" class="result"></div></div></section>
-<footer>입력 데이터는 이 기기의 브라우저에만 저장됩니다. 별도 서버로 전송하지 않습니다. 공유 기기에서는 사용 후 초기화하세요.</footer>
+<header><h1 id="mainTitle">관현악, 군악대 출결 관리</h1><p class="muted" id="headerCount">현재 57명 기준</p><nav class="tabnav"><a href="#bulk">출결 붙여넣기</a><a href="#roster">명단 관리</a><a href="#reasons">불참 사유 관리</a><a href="#output">출결 결과</a></nav><p id="headerStorageNote" role="note">각 항목별 변경사항은 현재 브라우저에만 저장됩니다. 다른 기기와 자동 공유되지 않습니다.</p></header>
+<section class="section" id="meetingSection"><h2>① 모임 날짜 및 선택</h2><p class="hint">각 모임을 선택하면 ② 출결 입력 대상, ③ 악기별·파트별 명단, ⑤ 결과가 함께 전환됩니다. 날짜별 출결 기록은 별도로 보관합니다.</p>
+<div class="row" style="margin:12px 0 16px"><label for="meetingSelect"><b>모임 선택</b></label><select id="meetingSelect" style="flex:1;min-width:240px" aria-label="모임 선택"></select></div>
+<div class="row"><label for="yearSelect">날짜 선택</label><select id="yearSelect" class="date-select" aria-label="연도"></select><select id="monthSelect" class="date-select" aria-label="월"></select><select id="daySelect" class="date-select" aria-label="일"></select><button class="secondary" id="todayBtn">오늘</button></div>
+<strong id="dateLabel" class="date-display" style="margin-top:12px" aria-live="polite"></strong></section>
+<section class="section hidden" id="sundaySection">
+<h2 id="sundayTitle">주일 예배위원 제외</h2>
+<p class="muted">선택한 날짜에 해당하는 주일 예배위원 명단을 붙여넣으세요. <b>해당 날짜의 군악대 출결 대상에서는 제외</b>되고, 출결 결과에는 <b>예배위원 사유</b>로 표시됩니다.</p>
+<label for="sundayPaste"><b>제외할 예배위원 명단 붙여넣기</b></label>
+<textarea id="sundayPaste" class="sunday-paste" spellcheck="false" placeholder=""></textarea>
+<div class="row" style="margin-top:10px"><button id="applySunday">주일 예배위원 명단 적용</button><span id="sundayCount" class="pill">제외 0명</span></div>
+<div id="sundayMessage" class="notice hidden" role="status"></div>
+<p class="hint">명단을 비우고 적용하면 제외 설정도 해제됩니다. 제외 명단에 포함된 사람은 출결 대상 인원수에 포함되지 않고, 최종 출결에는 이름/결/예배위원으로 표시됩니다. 조슬기, 최성빈은 제외됩니다.</p></section>
+<section class="section" id="bulk"><h2>② 출결 붙여넣기</h2><p><b>이름/상태/사유/상세사유/부분참석시간</b></p><p class="hint">이름 뒤에 붙는 영문자는 대문자·소문자 모두 인식합니다. 예: 최지웅a = 최지웅A (A와 B는 별도 인원)</p><textarea id="bulkInput" spellcheck="false" placeholder=""></textarea><div class="row" style="margin-top:10px"><button id="applyBulk">붙여넣은 출결 적용</button><button class="secondary" id="clearBulk">입력창 비우기</button><button class="outline" id="reset">전체 출결 초기화</button></div><div id="bulkMessage" class="notice hidden" role="status"></div></section>
+<section class="section" id="roster"><h2>③ 명단 관리 <span id="rosterTotal" class="pill roster-total">총 57명</span></h2>
+
+<div class="roster-tabs" role="group" aria-label="명단 분류"><button id="instrumentTab" type="button" class="active">악기별 명단</button><button id="teamTab" type="button" class="secondary">파트별 명단</button></div>
+<div id="instrumentPanel"><p class="hint">악기와 파트원을 드래그하거나, 선택한 뒤 이동할 위치를 눌러 순서를 변경할 수 있습니다. ✎ 이름 수정 · × 이름 삭제</p>
+<div class="member-add-panel"><h3>파트원 추가</h3><div class="row"><label for="rosterInstrument">악기</label><select id="rosterInstrument" aria-label="추가할 악기"></select><label for="rosterPart">파트</label><select id="rosterPart" aria-label="배정할 파트"></select><input id="rosterName" type="text" placeholder="추가할 이름" aria-label="추가할 이름" style="flex:1;min-width:150px"><button id="addRoster">파트원 추가</button></div></div><div id="rosterList"></div></div>
+<div id="teamPanel" class="hidden"><p class="hint">파트와 파트원을 드래그하거나, 선택한 뒤 이동할 위치를 눌러 순서를 변경할 수 있습니다. ✎ 이름 수정 · × 이름 삭제</p>
+<div class="member-add-panel"><h3>파트원 추가</h3>
+<div class="row"><label for="teamAssignment">파트</label><select id="teamAssignment" aria-label="추가할 파트"></select><label for="teamInstrument">악기</label><select id="teamInstrument" aria-label="추가할 사람의 악기"></select><input id="newTeamPerson" placeholder="추가할 이름" aria-label="추가할 이름"><button id="assignTeam">파트원 추가</button></div></div>
+<div id="teamList"></div>
+<div id="teamMessage" class="notice hidden" role="status"></div></div>
+<div id="rosterMessage" class="notice hidden" role="status"></div></section>
+<section class="section" id="reasons"><h2>④ 불참 사유 관리</h2><p class="hint" id="reasonHint">현재 출결에서 사용 중인 사유는 삭제할 수 없습니다.</p><div class="row" style="margin:12px 0"><label for="newReason">새 불참 사유</label><input id="newReason" type="text" placeholder="추가할 사유 입력" style="flex:1;min-width:150px"><button id="addReason">사유 추가</button></div><div class="row" style="margin:0 0 10px"><button type="button" id="resetReasonOrder" class="outline">기존 순서 적용</button></div><div id="reasonList" class="manager-list"></div><div id="reasonMessage" class="notice hidden" role="status"></div></section>
+<section class="section" id="output"><h2>⑤ 출결 결과</h2>
+<p class="muted" id="outputMeetingName"></p>
+<div id="stats" class="stats"></div>
+<div id="checkMessage" class="notice" role="status"></div>
+<!-- Original controls retained for backwards-compatible calculation handlers, visually hidden. -->
+<div class="hidden" aria-hidden="true"><button id="formatInstrument" type="button"></button><button id="formatTeam" type="button"></button><button id="copyAll" type="button"></button><button id="copyAtt" type="button"></button><button id="copyAbsent" type="button"></button><div id="resultHeading"></div><div id="result"></div></div>
+<div id="mobileOutputTabs" class="mobile-output-tabs" role="group" aria-label="모바일 최종출결 양식 선택">
+ <button id="showTraditionalResult" type="button" class="active" aria-pressed="true" aria-controls="traditionalResult">최종출결 1</button>
+ <button id="showFinalResult" type="button" aria-pressed="false" aria-controls="finalResult">최종출결 2</button>
+</div>
+<div class="dual-results" id="dualResults" data-mobile-view="traditional">
+ <div class="previewArea" data-output-panel="traditional">
+  <div class="row result-title"><h2>최종출결 1</h2><button id="copyTraditionalAll" type="button">전체 복사</button></div>
+  <p class="hint">기존 출결 양식 · 악기별 참석 및 불참</p>
+  <div id="traditionalResult" class="result" aria-label="기존 출결 양식 결과"></div>
+  <div class="row" style="margin-top:10px"><button class="secondary" id="copyTraditionalAtt" type="button">참석 부분만 복사</button><button class="secondary" id="copyTraditionalAbs" type="button">불참 부분만 복사</button></div>
+ </div>
+ <div class="previewArea" data-output-panel="final">
+  <div class="row result-title"><h2>최종출결 2</h2><button id="copyFinalAll" type="button">전체 복사</button></div>
+  <p class="hint">개인별 최종 출결 · 이름/상태/사유</p>
+  <div id="finalResult" class="result" aria-label="개인별 최종 출결 결과"></div>
+  <div class="row" style="margin-top:10px"><button class="secondary" id="copyFinalAtt" type="button">참석 부분만 복사</button><button class="secondary" id="copyFinalAbs" type="button">불참 부분만 복사</button></div>
+ </div>
+</div></section>
+<footer>입력 데이터는 이 기기의 브라우저에 저장되며 별도 서버로 전송하지 않습니다. 공유 기기에서는 사용 후 초기화하세요.</footer>
 </main>
 <script>
 'use strict';
-const ROSTER=[
-  ['Vn.', '이채원 강은실 김석현 손자영 이정호 임수규 장해진 차연주 최진희 최효승'],
-  ['Va.', '이주영 장소현'],
-  ['Vc.', '박범성 이정빈 정유희 진효남 최태원'],
-  ['Cb.', '정신'],
-  ['Fl.', '장하람 강지나 김지선 조슬기'],
-  ['Cla.', '강채은 곽현지 이수형 정용성 황찬혁'],
-  ['Sax.', '진승리 강연수 문주은 이지인 최성빈 황은선'],
-  ['Hn.', '김예은 장윤주'],
-  ['Tp.', '박나현 강유영 양가연 윤소현 최지웅A'],
-  ['Tb.', '김혜주 이병기 이성제 채창무'],
-  ['Eup.', '박혜람 주성현'],
-  ['Tuba.', '안시온'],
-  ['Per.', '최상범 김소연 김한동 문경욱 석효진 신성은 이중학 전우진 전희주 최지웅B']
-];
-const REASONS=['직장','가정사','개인사','건강','행사','타모임','타업무','전도활동','알바','핍박대비','타지','미보고','파트미보고'];
+const MEETING_LABELS={"tue-all":"(화) 관현악 전체모임","tue-army":"(화) 전체모임 군악대","sat-army":"(토) 군악대 모임","sat-strings":"(토) 현악파트 모임","sat-committee":"(토) 관현악 예배위원 모임"};
+const MEETING_DEFAULTS={"tue-all":[["Vn.","이채원 강은실 김석현 서한비 손자영 이정호 임수규 장해진 차연주 최진희 최효승"],["Va.","이주영 장소현"],["Vc.","박범성 이정빈 정유희 진효남 최태원"],["Fl.","장하람 강지나 김소희 김지선 이채련 이하빈 조슬기"],["Cla.","강채은 곽현지 김은송 이수형 정용성 황찬혁"],["Sax.","진승리 정신 강연수 문주은 서종하 이지인 최성빈 황은선"],["Hn.","김예은 장윤주 이건"],["Tp.","박나현 강유영 김서현 박은빈 양가연 윤소현 최지웅A"],["Tb.","김재빈 김혜주 이병기 이성제 이한나 정재원 채창무"],["Eup.","박혜람 주성현"],["Tuba.","안시온 김내영"],["Per.","최상범 김소연 김영기 김한동 문경욱 석효진 신성은 이중학 전우진 전희주 최지웅B"],["pa.","오세현"]],"tue-army":[["Fl.","장하람 강지나 김소희 김지선 이채련 이하빈 조슬기"],["Cla.","강채은 곽현지 김은송 이수형 정용성 황찬혁"],["Sax.","진승리 강연수 문주은 서종하 이지인 최성빈 황은선"],["Hn.","김예은 장윤주 이건"],["Tp.","박나현 강유영 김서현 박은빈 양가연 윤소현 최지웅A"],["Tb.","김재빈 김혜주 이성제 이한나 정재원 채창무"],["Eup.","박혜람 주성현"],["Tuba.","안시온 김내영"],["Per.","최상범 김소연 김영기 김한동 문경욱 석효진 신성은 이중학 전우진 전희주 최지웅B"],["pa.","오세현"]],"sat-army":[["Fl.","장하람 강지나 김소희 김지선 이채련 이하빈 조슬기"],["Cla.","강채은 곽현지 김은송 이수형 정용성 황찬혁"],["Sax.","진승리 정신 강연수 문주은 서종하 이지인 최성빈 황은선"],["Hn.","김예은 장윤주 이건"],["Tp.","박나현 강유영 김서현 박은빈 양가연 윤소현 최지웅A"],["Tb.","김재빈 김혜주 이성제 이한나 정재원 채창무"],["Eup.","박혜람 주성현"],["Tuba.","안시온 김내영"],["Per.","최상범 김소연 김영기 김한동 문경욱 석효진 신성은 이중학 전우진 전희주 최지웅B"],["pa.","오세현"]],"sat-strings":[["Vn.","이채원 강은실 김석현 서한비 손자영 이정호 임수규 장해진 차연주 최진희 최효승"],["Va.","이주영 장소현"],["Vc.","박범성 이정빈 정유희 진효남 최태원"],["Sax.","정신"]],"sat-committee":[["Vn.","이채원 강은실 김석현 손자영 이정호 임수규 장해진 차연주 최진희 최효승"],["Va.","이주영 장소현"],["Vc.","박범성 이정빈 정유희 진효남 최태원"],["Fl.","장하람 강지나 김지선 조슬기"],["Cla.","강채은 곽현지 이수형 정용성 황찬혁"],["Sax.","진승리 정신 강연수 문주은 이지인 최성빈 황은선"],["Hn.","김예은 장윤주"],["Tp.","박나현 강유영 양가연 윤소현 최지웅A"],["Tb.","채창무 김혜주 이병기 이성제"],["Eup.","박혜람 주성현"],["Tuba.","안시온"],["Per.","최상범 김소연 김한동 문경욱 석효진 신성은 이중학 전우진 전희주 최지웅B"]]};
+const TEAM_DEFAULTS={"tue-all":[["가온소리","황은선 진효남 김석현 김예은 김혜주 석효진 이병기 이수형 이주영 장소현 차연주"],["사랑소리","장하람 김서현 김지선 강지나 문주은 양가연 이건 이성제 이채련 정유희"],["생명의소리","조슬기 박은빈 강연수 김내영 김영기 김은송 김한동 박범성 윤소현 장해진 전희주 채창무"],["은혜소리","박나현 강유영 서종하 손자영 신성은 오세현 최성빈 최효승 황찬혁"],["하나된소리","진승리 곽현지 정신 김소희 이정빈 이중학 이지인 정용성 최지웅A 최지웅B 최태원"],["하늘소리","이채원 강채은 강은실 김재빈 문경욱 서한비 이한나 최상범 최진희 정재원"],["화음소리","안시온 김소연 박혜람 이정호 이하빈 임수규 장윤주 전우진 주성현"]],"tue-army":[["가온소리","황은선 김예은 김혜주 석효진 이수형"],["사랑소리","장하람 김서현 김지선 강지나 문주은 양가연 이건 이성제 이채련"],["생명의소리","조슬기 박은빈 강연수 김내영 김영기 김은송 김한동 윤소현 전희주 채창무"],["은혜소리","박나현 강유영 서종하 신성은 오세현 최성빈 황찬혁"],["하나된소리","진승리 곽현지 정신 김소희 이중학 이지인 정용성 최지웅A 최지웅B"],["하늘소리","강채은 김재빈 문경욱 이한나 최상범 정재원"],["화음소리","안시온 김소연 박혜람 이하빈 장윤주 전우진 주성현"]],"sat-army":[["가온소리","황은선 김예은 김혜주 석효진 이수형"],["사랑소리","장하람 김서현 김지선 강지나 문주은 양가연 이건 이성제 이채련"],["생명의소리","조슬기 박은빈 강연수 김내영 김영기 김은송 김한동 윤소현 전희주 채창무"],["은혜소리","박나현 강유영 서종하 신성은 오세현 최성빈 황찬혁"],["하나된소리","진승리 곽현지 정신 김소희 이중학 이지인 정용성 최지웅A 최지웅B"],["하늘소리","강채은 김재빈 문경욱 이한나 최상범 정재원"],["화음소리","안시온 김소연 박혜람 이하빈 장윤주 전우진 주성현"]],"sat-strings":[["현악파트","진효남 김석현 이주영 장소현 차연주 정유희 장해진 박범성 최효승 손자영 정신 이정빈 최태원 이채원 강은실 서한비 최진희 이정호 임수규"]],"sat-committee":[["가온소리","황은선 진효남 김석현 김예은 김혜주 석효진 이병기 이수형 이주영 장소현 차연주"],["사랑소리","장하람 김지선 강지나 문주은 양가연 이성제 정유희"],["생명의소리","조슬기 강연수 김한동 박범성 윤소현 장해진 전희주 채창무"],["은혜소리","박나현 강유영 손자영 신성은 최성빈 최효승 황찬혁"],["하나된소리","진승리 곽현지 정신 이정빈 이중학 이지인 정용성 최지웅A 최지웅B 최태원"],["하늘소리","이채원 강채은 강은실 문경욱 최상범 최진희"],["화음소리","안시온 김소연 박혜람 이정호 임수규 장윤주 전우진 주성현"]]};
+const MEETING_IDS=Object.keys(MEETING_LABELS);
+const MULTI_PREFIX='orchestra-attendance-multi-v1';
+const LEGACY_MEETING='sat-committee';
+let activeMeeting=LEGACY_MEETING;
+const cloneRows=rows=>rows.map(([label,names])=>[label,names]);
+const ROSTER=cloneRows(MEETING_DEFAULTS[activeMeeting]);
+let TEAM_ROSTER=cloneRows(TEAM_DEFAULTS[activeMeeting]);
+let rosterTab='instrument';
+const REASONS=['직장','가정사','개인사','건강','행사','타모임','타업무','전도활동','알바','핍박대비','타지','예배위원','미보고','파트미보고'];
+const DEFAULT_REASON_ORDER=Object.freeze([...REASONS]);
 const STATUSES=['출','결','부분','미보고'];
 let PEOPLE=[];
 function rebuildPeople(){PEOPLE=ROSTER.flatMap(([instrument,list])=>list.split(/\s+/).filter(Boolean).map(name=>({name,instrument})));}
@@ -44,57 +214,164 @@ rebuildPeople();
 const key='orchestra-attendance-web-v3'; // 저장 데이터는 유지
 const rosterKey='sat-committee-roster-v2-official-57';
 let state={date:localDate(),people:{}};
-function saveRoster(){try{localStorage.setItem(rosterKey,JSON.stringify(ROSTER))}catch(e){console.warn('명단 저장 실패',e)}}
+function saveRoster(){try{
+ localStorage.setItem(MULTI_PREFIX+'-roster-'+activeMeeting,JSON.stringify(ROSTER));
+ if(activeMeeting===LEGACY_MEETING)localStorage.setItem(rosterKey,JSON.stringify(ROSTER));
+ }catch(e){console.warn('명단 저장 실패',e)}}
+function validateRows(data){
+ if(!Array.isArray(data)||!data.length)return false;
+ if(data.some(r=>!Array.isArray(r)||r.length!==2||typeof r[0]!=='string'||!r[0].trim()||r[0].trim()!==r[0]||/[\n\r/]/.test(r[0])||typeof r[1]!=='string'))return false;
+ if(new Set(data.map(r=>r[0].toLocaleLowerCase())).size!==data.length)return false;
+ const names=data.flatMap(r=>r[1].split(/\s+/).filter(Boolean));
+ return new Set(names.map(cleanName)).size===names.length;
+}
+function sameGroupMembers(rows,baseline){
+ if(!validateRows(rows)||rows.length!==baseline.length)return false;
+ const listed=new Map(rows.map(([inst,names])=>[inst,names.split(/\s+/).filter(Boolean).sort().join('|')]));
+ return baseline.every(([inst,names])=>listed.get(inst)===names.split(/\s+/).filter(Boolean).sort().join('|'));
+}
 function loadRoster(){try{
- const data=JSON.parse(localStorage.getItem(rosterKey)||'null');
- if(!Array.isArray(data)||!data.length)return;
- if(data.some(r=>!Array.isArray(r)||r.length!==2||typeof r[0]!=='string'||!r[0].trim()||r[0].trim()!==r[0]||/[\n\r/]/.test(r[0])||typeof r[1]!=='string'))return;
- if(new Set(data.map(r=>r[0].toLocaleLowerCase())).size!==data.length)return;
- const all=data.flatMap(r=>r[1].split(/\s+/).filter(Boolean));
- if(new Set(all.map(cleanName)).size!==all.length)return;
- ROSTER.splice(0,ROSTER.length,...data.map(r=>[r[0],r[1]]));rebuildPeople();
- }catch(e){console.warn('명단 불러오기 실패',e)}}
+ const latest=JSON.parse(localStorage.getItem(MULTI_PREFIX+'-roster-'+activeMeeting)||'null');
+ const legacy=activeMeeting===LEGACY_MEETING?JSON.parse(localStorage.getItem(rosterKey)||'null'):null;
+ // 최신 사용자가 제공한 명단과 인원 구성은 같고 순서만 다른 구버전 캐시는 최신 기본 순서로 갱신한다.
+ const rows=validateRows(latest)?latest:validateRows(legacy)&&!sameGroupMembers(legacy,MEETING_DEFAULTS[activeMeeting])?legacy:MEETING_DEFAULTS[activeMeeting];
+ ROSTER.splice(0,ROSTER.length,...cloneRows(rows));rebuildPeople();
+ }catch(e){ROSTER.splice(0,ROSTER.length,...cloneRows(MEETING_DEFAULTS[activeMeeting]));rebuildPeople();console.warn('명단 불러오기 실패',e)}}
 
-const localRevisionKey='sat-committee-local-revision-20261113-v1';
+// 2026-11-13: Cb. 삭제, 정신을 Sax.의 진승리 다음으로 배치.
+// 기존 localStorage 명단에도 적용하되, 다른 개인별 변경사항은 유지한다.
+const ROSTER_MIGRATION_KEY=MULTI_PREFIX+'-sax-without-cb-v2';
+function normalizeInstrumentRoster(rows,meeting){
+ const source=cloneRows(rows);
+ let hadPerson=false;
+ for(const row of source){
+  if(row[0]==='Cb.'&&row[1].split(/\s+/).includes('정신'))hadPerson=true;
+  row[1]=row[1].split(/\s+/).filter(n=>n&&n!=='정신').join(' ');
+ }
+ const cleaned=source.filter(row=>row[0]!=='Cb.');
+ // 정신은 화요일 군악대 명단에서만 제외한다.
+ const mustContain=meeting!=='tue-army'&&(hadPerson||source.some(row=>row[0]==='Sax.'&&row[1].split(/\s+/).includes('정신'))||MEETING_DEFAULTS[meeting].some(row=>row[1].split(/\s+/).includes('정신')));
+ if(mustContain){
+  let sax=cleaned.find(row=>row[0]==='Sax.');
+  if(!sax){sax=['Sax.',''];cleaned.push(sax)}
+  const names=sax[1].split(/\s+/).filter(Boolean);
+  names.splice(names.includes('진승리')?names.indexOf('진승리')+1:0,0,'정신');
+  sax[1]=names.join(' ');
+ }
+ return cleaned;
+}
 function migrateExistingRosterAndReasons(){
  try{
-  if(localStorage.getItem(localRevisionKey)==='1')return;
-  const cb=ROSTER.find(r=>r[0]==='Cb.');
-  const sax=ROSTER.find(r=>r[0]==='Sax.');
-  if(cb&&sax){
-   const members=sax[1].split(/\s+/).filter(Boolean);
-   if(members.includes('정신')){
-    sax[1]=members.filter(x=>x!=='정신').join(' ');
-    if(!cb[1].split(/\s+/).includes('정신'))cb[1]=[cb[1],'정신'].filter(Boolean).join(' ');
+  if(localStorage.getItem(ROSTER_MIGRATION_KEY)!=='1'){
+   for(const id of MEETING_IDS){
+    const original=readMeetingRoster(id);
+    writeMeetingRoster(id,normalizeInstrumentRoster(original,id));
    }
+   localStorage.setItem(ROSTER_MIGRATION_KEY,'1');
   }
-  const paIndex=ROSTER.findIndex(r=>r[0].toLowerCase()==='pa.');
-  if(paIndex>=0){
-   const paMembers=ROSTER[paIndex][1].split(/\s+/).filter(Boolean);
-   if(paMembers.length){
-    let per=ROSTER.find(r=>r[0]==='Per.');
-    if(!per){per=['Per.',''];ROSTER.splice(paIndex,0,per)}
-    per[1]=[per[1],...paMembers].filter(Boolean).join(' ');
-   }
-   const removed=ROSTER.findIndex(r=>r[0].toLowerCase()==='pa.');
-   if(removed>=0)ROSTER.splice(removed,1);
-  }
+  const corrected=readMeetingRoster(activeMeeting);
+  ROSTER.splice(0,ROSTER.length,...corrected);
+  rebuildPeople();
   const partIndex=REASONS.indexOf('파트미보고');
-  if(partIndex>=0)REASONS.splice(partIndex,1);
-  const missingIndex=REASONS.indexOf('미보고');
-  REASONS.splice(missingIndex>=0?missingIndex+1:REASONS.length,0,'파트미보고');
-  rebuildPeople();saveRoster();saveReasons();
-  localStorage.setItem(localRevisionKey,'1');
- }catch(e){console.warn('기존 명단·사유 업데이트 실패',e)}
+  if(partIndex>=0){REASONS.splice(partIndex,1);const missing=REASONS.indexOf('미보고');REASONS.splice(missing>=0?missing+1:REASONS.length,0,'파트미보고')}
+  saveReasons();
+ }catch(e){console.warn('명단 마이그레이션 실패',e)}
 }
 
+/* 네 모임의 공통 인원은 악기/순서/이름 변경을 동기화한다.
+   (토) 예배위원 명단은 동기화하지 않는다. 각 모임 대상 인원은 유지한다. */
+const SYNC_MEETINGS=['tue-all','tue-army','sat-army','sat-strings'];
+function readMeetingRoster(id){
+ try{const data=JSON.parse(localStorage.getItem(MULTI_PREFIX+'-roster-'+id)||'null');return validateRows(data)?cloneRows(data):cloneRows(MEETING_DEFAULTS[id])}
+ catch(e){return cloneRows(MEETING_DEFAULTS[id])}
+}
+function writeMeetingRoster(id,rows){try{localStorage.setItem(MULTI_PREFIX+'-roster-'+id,JSON.stringify(rows))}catch(e){console.warn('명단 연동 실패',e)}}
+function linkedTuesdayRename(oldName,newName){
+ if(!SYNC_MEETINGS.includes(activeMeeting))return;
+ for(const id of SYNC_MEETINGS){
+  if(id===activeMeeting)continue;
+  const rows=readMeetingRoster(id);
+  for(const row of rows)row[1]=row[1].split(/\s+/).filter(Boolean).map(n=>n===oldName?newName:n).join(' ');
+  writeMeetingRoster(id,rows);
+  try{
+   const teams=JSON.parse(localStorage.getItem(MULTI_PREFIX+'-teams-'+id)||'null')||cloneRows(TEAM_DEFAULTS[id]);
+   if(validateRows(teams)){
+    for(const row of teams)row[1]=row[1].split(/\s+/).filter(Boolean).map(n=>n===oldName?newName:n).join(' ');
+    localStorage.setItem(MULTI_PREFIX+'-teams-'+id,JSON.stringify(teams));
+   }
+  }catch(e){console.warn('연동 팀명단 수정 실패',e)}
+ }
+}
+function linkedTuesdayReconcile(previousRows=null){
+ if(!SYNC_MEETINGS.includes(activeMeeting))return;
+ const before=previousRows||readMeetingRoster(activeMeeting);
+ const beforeNames=new Set(before.flatMap(row=>row[1].split(/\s+/).filter(Boolean)));
+ const afterNames=new Set(ROSTER.flatMap(row=>row[1].split(/\s+/).filter(Boolean)));
+ const deleted=[...beforeNames].filter(name=>!afterNames.has(name));
+ const added=[...afterNames].filter(name=>!beforeNames.has(name));
+ const sourceMap=new Map(ROSTER.flatMap(([inst,names])=>names.split(/\s+/).filter(Boolean).map(name=>[name,inst])));
+ for(const id of SYNC_MEETINGS){
+  if(id===activeMeeting)continue;
+  const target=readMeetingRoster(id);
+  const originalMembers=new Set(target.flatMap(row=>row[1].split(/\s+/).filter(Boolean)));
+  for(const row of target)row[1]=row[1].split(/\s+/).filter(name=>name&&!deleted.includes(name)&&(!sourceMap.has(name)||sourceMap.get(name)===row[0])).join(' ');
+  for(const [name,inst] of sourceMap){
+   // Existing shared members keep their membership, but follow the new instrument.
+   // Newly added members go to the overall meeting and matching instrumental meeting.
+   const allowNew=added.includes(name)&&(id==='tue-all'||(id==='tue-army'||id==='sat-army')&& !['Vn.','Va.','Vc.','Cb.'].includes(inst)||id==='sat-strings'&&['Vn.','Va.','Vc.'].includes(inst));
+   if(!originalMembers.has(name)&&!allowNew)continue;
+   let row=target.find(r=>r[0]===inst);
+   if(!row){row=[inst,''];target.push(row)}
+   const members=row[1].split(/\s+/).filter(Boolean);
+   if(!members.includes(name))members.push(name);
+   row[1]=members.join(' ');
+  }
+  // Keep common names in the same order within each instrument, retain target-only members.
+  for(const row of target){
+   const members=row[1].split(/\s+/).filter(Boolean);
+   const ordered=ROSTER.find(r=>r[0]===row[0])?.[1].split(/\s+/).filter(Boolean)||[];
+   const ranked=new Map(ordered.map((n,i)=>[n,i]));
+   row[1]=members.map((n,i)=>({n,i})).sort((a,b)=>{
+    if(ranked.has(a.n)&&ranked.has(b.n))return ranked.get(a.n)-ranked.get(b.n);
+    return a.i-b.i;
+   }).map(x=>x.n).join(' ');
+  }
+  writeMeetingRoster(id,target);
+  if(deleted.length){
+   try{
+    const teams=JSON.parse(localStorage.getItem(MULTI_PREFIX+'-teams-'+id)||'null')||cloneRows(TEAM_DEFAULTS[id]);
+    if(validateRows(teams)){
+     for(const row of teams)row[1]=row[1].split(/\s+/).filter(n=>!deleted.includes(n)).join(' ');
+     localStorage.setItem(MULTI_PREFIX+'-teams-'+id,JSON.stringify(teams));
+    }
+   }catch(e){console.warn('연동 팀명단 삭제 실패',e)}
+  }
+ }
+}
+
+function saveTeamRoster(){try{localStorage.setItem(MULTI_PREFIX+'-teams-'+activeMeeting,JSON.stringify(TEAM_ROSTER))}catch(e){console.warn('팀 저장 실패',e)}}
+function loadTeamRoster(){try{
+ const rows=JSON.parse(localStorage.getItem(MULTI_PREFIX+'-teams-'+activeMeeting)||'null');
+ if(Array.isArray(rows)&&(rows.length===0||validateRows(rows)))TEAM_ROSTER=cloneRows(rows);else TEAM_ROSTER=cloneRows(TEAM_DEFAULTS[activeMeeting]);
+ syncTeams();
+ }catch(e){TEAM_ROSTER=cloneRows(TEAM_DEFAULTS[activeMeeting]);syncTeams()}}
+function syncTeams(){
+ const available=new Set(PEOPLE.map(p=>cleanName(p.name))),assigned=new Set();
+ for(const row of TEAM_ROSTER){const kept=[];
+  for(const name of row[1].split(/\s+/).filter(Boolean)){
+   if(available.has(cleanName(name))&&!assigned.has(cleanName(name))){kept.push(name);assigned.add(cleanName(name))}
+  }row[1]=kept.join(' ');
+ }
+}
+function replaceTeamName(oldName,newName){for(const row of TEAM_ROSTER)row[1]=row[1].split(/\s+/).filter(Boolean).map(n=>n===oldName?newName:n).join(' ');saveTeamRoster()}
+function removeTeamName(name){for(const row of TEAM_ROSTER)row[1]=row[1].split(/\s+/).filter(Boolean).filter(n=>n!==name).join(' ');saveTeamRoster()}
 const reasonsKey='sat-committee-reasons-v1';
 const templateKey='sat-committee-template-v2';
 const legacyTemplateKey='sat-committee-template-v1';
 const DEFAULT_INSTRUMENTS=ROSTER.map(r=>r[0]);
 const DEFAULT_DIVIDER='ㅡ ㅡ ㅡ ㅡ ㅡ ㅡ ㅡ ㅡ ㅡ ㅡ ㅡ ㅡ';
 function defaultTemplate(){
- return ['{날짜}','','참석 {참석}명 (부분 {부분}명)','지도.',...ROSTER.map(r=>r[0]),'',DEFAULT_DIVIDER,'*불참 {불참}명 (미보고 {미보고}명)','{불참사유별}'].join('\n');
+ return ['{날짜}','','참석 {참석}명 (부분 {부분}명)','지도.',...ROSTER.map(r=>r[0]),'',DEFAULT_DIVIDER,'','*불참 {불참}명 (미보고 {미보고}명)','','{불참사유별}'].join('\n');
 }
 let templateText='';
 function loadReasons(){try{
@@ -103,6 +380,14 @@ function loadReasons(){try{
  REASONS.splice(0,REASONS.length,...data);
  }catch(e){console.warn('불참 사유 불러오기 실패',e)}}
 function saveReasons(){try{localStorage.setItem(reasonsKey,JSON.stringify(REASONS))}catch(e){console.warn('사유 저장 실패',e)}}
+function ensureSundayReason(){
+ // 이전 버전의 브라우저에 저장된 사용자 사유 목록도 그대로 유지하면서 기본 예배위원 사유만 추가한다.
+ if(!REASONS.includes('예배위원')){
+  const missingIndex=REASONS.indexOf('미보고');
+  REASONS.splice(missingIndex>=0?missingIndex:REASONS.length,0,'예배위원');
+  saveReasons();
+ }
+}
 function ensureInstrumentLines(text){
  // Keep user-chosen order for all existing instruments. Append only genuinely missing instruments.
  const lines=String(text).replace(/\r\n/g,'\n').split('\n');
@@ -119,32 +404,86 @@ function ensureInstrumentLines(text){
  }
  return lines.join('\n');
 }
+// 모든 모임의 기존 저장 양식도 동일하게: 구분선 → 빈 줄 → 불참 제목 → 빈 줄 → 사유별 명단.
+function normalizeAbsenceSpacing(source){
+ const lines=String(source).replace(/\r\n/g,'\n').split('\n');
+ const divider=text=>/^(?:ㅡ\s*){3,}$/.test(text)||/^[=\-─━_]{5,}$/.test(text);
+ const heading=text=>/^\*?불참\s/.test(text)||(text.includes('{불참}')&&!text.includes('{불참사유별}'));
+ for(let i=0;i<lines.length;i++){
+  if(!heading(lines[i].trim()))continue;
+  let before=i;
+  while(before>0&&!lines[before-1].trim())before--;
+  if(before>0&&divider(lines[before-1].trim())){
+   lines.splice(before,i-before,'');
+   i=before+1;
+  }
+  let end=i+1;
+  while(end<lines.length&&!lines[end].trim())end++;
+  if(end<lines.length)lines.splice(i+1,end-(i+1),'');
+  break;
+ }
+ return lines.join('\n');
+}
 function loadTemplate(){
  templateText=defaultTemplate();
  try{
-  const saved=localStorage.getItem(templateKey);
-  if(saved!==null){const data=JSON.parse(saved);if(typeof data==='string'&&data.includes('{불참사유별}'))templateText=data}
-  else {
-   const legacy=JSON.parse(localStorage.getItem(legacyTemplateKey)||'null');
-   if(legacy&&typeof legacy==='object'&&typeof legacy.attendance==='string'&&typeof legacy.absence==='string'){
-    const order=Array.isArray(legacy.instrumentOrder)?legacy.instrumentOrder:ROSTER.map(r=>r[0]);
-    const instruments=[...new Set([...order,...ROSTER.map(r=>r[0])])].filter(x=>ROSTER.some(r=>r[0]===x));
-    const attendance=legacy.attendance.replace('{악기별참석}',instruments.join('\n'));
-    const divider=typeof legacy.separator==='string'?legacy.separator:DEFAULT_DIVIDER;
-    templateText=attendance+'\n'+(divider?divider+'\n':'')+legacy.absence;
-   }
+  const saved=JSON.parse(localStorage.getItem(MULTI_PREFIX+'-template-'+activeMeeting)||'null');
+  if(typeof saved==='string'&&saved.includes('{불참사유별}'))templateText=saved;
+  else if(activeMeeting===LEGACY_MEETING){
+   const previous=JSON.parse(localStorage.getItem(templateKey)||'null');
+   if(typeof previous==='string'&&previous.includes('{불참사유별}'))templateText=previous;
   }
  }catch(e){console.warn('양식 불러오기 실패',e)}
- templateText=ensureInstrumentLines(templateText.split('\n').filter(line=>line.trim()!=='pa.' || ROSTER.some(r=>r[0]==='pa.')).join('\n'));
+ templateText=normalizeAbsenceSpacing(ensureInstrumentLines(templateText.split('\n').filter(line=>line.trim()!=='Cb.' && (line.trim()!=='pa.'||ROSTER.some(r=>r[0]==='pa.'))).join('\n')));
 }
-function saveTemplateStorage(){try{localStorage.setItem(templateKey,JSON.stringify(templateText))}catch(e){console.warn('양식 저장 실패',e)}}
+function saveTemplateStorage(){try{
+ localStorage.setItem(MULTI_PREFIX+'-template-'+activeMeeting,JSON.stringify(templateText));
+ if(activeMeeting===LEGACY_MEETING)localStorage.setItem(templateKey,JSON.stringify(templateText));
+ }catch(e){console.warn('양식 저장 실패',e)}}
 
 function localDate(){const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')}
 function empty(){return {status:'미보고',reason:'',detail:'',time:''}}
-function get(name){return state.people[name]||empty()}
+function get(name){
+ const record=state.people[name];
+ if(activeMeeting==='tue-army'&&(name==='조슬기'||name==='최성빈')&&(!record||record.status==='미보고'))return {status:'출',reason:'',detail:'',time:''};
+ // 예배위원 사유는 화요일 전체모임 군악대 전용이다. 이전 저장 데이터에도 이 표시 제한을 적용한다.
+ if(activeMeeting!=='tue-army'&&record?.reason==='예배위원')return {...record,reason:''};
+ return record||empty();
+}
 function cleanName(s){return String(s||'').replace(/[\s\u3000\u00a0]/g,'').trim()}
-function save(){try{localStorage.setItem(key,JSON.stringify(state))}catch(e){console.warn('저장 실패',e)}}
-function load(){try{const s=JSON.parse(localStorage.getItem(key)||'null');if(s&&typeof s==='object'){state.date=/^\d{4}-\d\d-\d\d$/.test(s.date)?s.date:localDate();if(s.people&&typeof s.people==='object')for(const n of PEOPLE){const p=s.people[n.name];if(p&&typeof p==='object')state.people[n.name]={status:STATUSES.includes(p.status)?p.status:'미보고',reason:String(p.reason||''),detail:String(p.detail||''),time:String(p.time||'')}}}}catch(e){console.warn('저장 데이터 파싱 실패',e)}}
+function stateKey(meeting,date){return MULTI_PREFIX+'-attendance-'+meeting+'-'+date}
+function save(){try{
+ localStorage.setItem(stateKey(activeMeeting,state.date),JSON.stringify({people:state.people,excludedSunday:state.excludedSunday||[]}));
+ localStorage.setItem(MULTI_PREFIX+'-last-date',state.date);
+ localStorage.setItem(MULTI_PREFIX+'-last-meeting',activeMeeting);
+ }catch(e){console.warn('저장 실패',e)}}
+function load(){
+ const date=state.date||localDate();state={date,people:{},excludedSunday:[]};
+ try{
+  let saved=JSON.parse(localStorage.getItem(stateKey(activeMeeting,date))||'null');
+  if(!saved&&activeMeeting===LEGACY_MEETING){
+   const legacy=JSON.parse(localStorage.getItem(key)||'null');
+   if(legacy&&legacy.date===date&&legacy.people&&typeof legacy.people==='object')saved=legacy;
+  }
+  if(saved&&typeof saved==='object'){
+   if(saved.people&&typeof saved.people==='object')for(const n of PEOPLE){const p=saved.people[n.name];if(p&&typeof p==='object')state.people[n.name]={status:STATUSES.includes(p.status)?p.status:'미보고',reason:String(p.reason||''),detail:String(p.detail||''),time:String(p.time||'')}}
+   if(Array.isArray(saved.excludedSunday))state.excludedSunday=saved.excludedSunday.filter(x=>typeof x==='string');
+  }
+ }catch(e){console.warn('저장 데이터 불러오기 실패',e)}
+}
+function excludedSundayNames(){
+ if(activeMeeting!=='tue-army')return [];
+ const excluded=new Set(state.excludedSunday||[]);
+ return PEOPLE.map(p=>p.name).filter(name=>excluded.has(name));
+}
+function isExcludedSunday(name){return activeMeeting==='tue-army'&&(state.excludedSunday||[]).includes(name)}
+function getForOutput(name){
+ // 대상 제외는 집계에만 적용하며, 양식에는 그 사람을 예배위원 사유로 출력한다.
+ if(isExcludedSunday(name))return {status:'결',reason:'예배위원',detail:'',time:''};
+ return get(name);
+}
+function attendancePeople(){const exclusions=new Set(excludedSundayNames());return PEOPLE.filter(p=>!exclusions.has(p.name))}
+
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function label(name,p){
   if(p.status!=='부분')return name;
@@ -155,22 +494,52 @@ function label(name,p){
   const visible=[reason,partialTime].filter(Boolean).join('/');
   return visible?`${name}(${visible})`:name;
 }
-function reasonCategory(p){if(p.status==='미보고')return '미보고';const v=(p.reason||'').trim();return REASONS.includes(v)?v:'사유 미기재/확인 필요'}
+function reasonCategory(p){if(p.status==='미보고')return '미보고';const v=String(p.reason||'').trim();return v||'사유 미기재/확인 필요'}
 function five(items){const lines=[];for(let i=0;i<items.length;i+=5)lines.push(items.slice(i,i+5).join(' '));return lines.join('\n')}
-function titleDate(){const s=state.date||localDate(),[y,m,d]=s.split('-').map(Number),dt=new Date(y,m-1,d);if(dt.getFullYear()!==y||dt.getMonth()!==m-1||dt.getDate()!==d)return '날짜를 확인하세요';const w='일월화수목금토'[dt.getDay()];return `${m}. ${d}.(${w}) 관현악 예배위원 모임 출결`}
+function titleDate(){
+ const s=state.date||localDate(),[y,m,d]=s.split('-').map(Number),dt=new Date(y,m-1,d);
+ if(dt.getFullYear()!==y||dt.getMonth()!==m-1||dt.getDate()!==d)return '날짜를 확인하세요';
+ const w='일월화수목금토'[dt.getDay()];
+ return `${m}. ${d}.(${w}) ${MEETING_LABELS[activeMeeting].replace(/^\([^)]+\)\s*/,'')} 출결`;
+}
 function fillTemplate(source,tokens){return source.replace(/\{(날짜|참석|부분|불참|미보고|총원|실제불참|불참사유별)\}/g,(match,k)=>Object.prototype.hasOwnProperty.call(tokens,k)?String(tokens[k]):match)}
+// 파트미보고는 이름/파트미보고 한 줄로 해당 파트 전체를 지정한다.
+// 다른 파트원의 기존 출결 상태와 무관하게, 지정된 이름의 파트를 표시한다.
+// 같은 파트의 여러 사람을 입력해도 파트명과 인원은 한 번만 집계한다.
+function partMissingSummary(){
+ const active=new Set(attendancePeople().map(person=>person.name));
+ const marked=new Set(Object.entries(state.people).filter(([name,p])=>
+  active.has(name)&&p&&p.reason==='파트미보고'&&p.status==='결'
+ ).map(([name])=>name));
+ const teams=[];
+ for(const [team,names] of TEAM_ROSTER){
+  const members=[...new Set(names.split(/\s+/).filter(Boolean).filter(name=>active.has(name)))];
+  if(!members.length||!members.some(name=>marked.has(name)))continue;
+  teams.push({name:team,count:members.length});
+ }
+ return {teams,total:teams.reduce((sum,t)=>sum+t.count,0)};
+}
 function compute(){
- const att={},abs={},group={},missing=[];let counts={total:PEOPLE.length,att:0,partial:0,abs:0,unreported:0,partUnreported:0};
+ const partMissing=partMissingSummary();
+ const att={},abs={},group={},missing=[];let counts={total:attendancePeople().length,att:0,partial:0,abs:0,unreported:0,partUnreported:partMissing.total};
  for(const [inst] of ROSTER){att[inst]=[];abs[inst]=[]}
  for(const c of REASONS)group[c]=[];
  group['사유 미기재/확인 필요']=[];
- for(const {name,instrument} of PEOPLE){const p=get(name);
+ for(const {name,instrument} of attendancePeople()){const p=get(name);
   if(p.status==='출'||p.status==='부분'){counts.att++;if(p.status==='부분')counts.partial++;att[instrument].push(label(name,p))}
-  else{counts.abs++;if(p.status==='미보고'){counts.unreported++;missing.push(name)}abs[instrument].push(label(name,p));const category=reasonCategory(p);if(category==='파트미보고')counts.partUnreported++;group[category].push(name)}
+  else{counts.abs++;if(p.status==='미보고'){counts.unreported++;missing.push(name)}abs[instrument].push(label(name,p));const category=reasonCategory(p);if(!Object.prototype.hasOwnProperty.call(group,category))group[category]=[];group[category].push(name)}
  }
- const reasonLines=Object.entries(group).filter(([,names])=>names.length).map(([reason,names])=>five(names)+'('+reason+')').join('\n');
+ // 주일 예배위원은 출결 대상에서 제외하되 사유별 출력에는 빠지지 않도록 한다.
+ if(activeMeeting==='tue-army')group['예배위원'].push(...excludedSundayNames());
+ // 목록에 없는 입력 사유는 입력된 원문으로 그룹화하고, 미보고 바로 앞에 배치한다.
+ const registered=new Set(REASONS);
+ const unknownReasons=Object.keys(group).filter(reason=>!registered.has(reason)&&reason!=='사유 미기재/확인 필요');
+ const reasonOrder=[...REASONS.filter(reason=>reason!=='미보고'),...unknownReasons];
+ if(group['사유 미기재/확인 필요'].length)reasonOrder.push('사유 미기재/확인 필요');
+ reasonOrder.push('미보고');
+ const reasonLines=reasonOrder.filter(reason=>group[reason]?.length).map(reason=>five(group[reason])+'('+reason+')').join('\n');
  const tokens={'날짜':'\u2060'+titleDate(),'참석':counts.att,'부분':counts.partial,'불참':counts.abs,'미보고':counts.unreported,'총원':counts.total,'실제불참':counts.abs-counts.unreported,'불참사유별':reasonLines};
- const source=ensureInstrumentLines(templateText);
+ const source=normalizeAbsenceSpacing(ensureInstrumentLines(templateText));
  const lines=source.split('\n').map(line=>{
    const name=line.trim();
    return Object.prototype.hasOwnProperty.call(att,name)?line+ (att[name].length?' '+five(att[name]).replace(/\n/g,'\n    '):''):line;
@@ -190,32 +559,162 @@ function compute(){
  else {attText=full;absText=''}
  return {counts,att,group,attText,absText,full,missing}
 }
-function renderResults(){document.getElementById('dateLabel').textContent='선택 날짜: '+titleDate().split(' 관현악')[0];const o=compute(),c=o.counts;document.getElementById('stats').innerHTML=[['전체',c.total],['참석',c.att],['부분 참석',c.partial],['미보고',c.unreported],['파트미보고',c.partUnreported],['불참',c.abs-c.unreported]].map(([l,n])=>`<div class="stat"><small>${l}</small><b>${n}명</b></div>`).join('');const msg=document.getElementById('checkMessage');msg.className='notice '+(c.total===c.att+c.abs?'success':'');msg.textContent=`전체 ${c.total}명 = 참석 ${c.att}명 + 불참·미보고 ${c.abs}명\n미보고 ${c.unreported}명 · ${c.unreported?'미보고자: '+o.missing.join(', '):'전원 상태 입력 완료'}`;
-document.getElementById('result').textContent=o.full;}
-function applyBulk(){const text=document.getElementById('bulkInput').value,lines=text.split(/\r?\n/),errors=[],updates=new Map(),duplicates=[];let valid=0;for(let i=0;i<lines.length;i++){const line=lines[i].trim();if(!line)continue;const v=line.split('/');if(v.length<2||v.length>5){errors.push(`${i+1}행: 이름/상태를 기본으로 최대 5개 항목까지 입력할 수 있습니다.`);continue}let [raw='',statusRaw='',reasonRaw='',detailRaw='',timeRaw='']=v.map(x=>x.trim());if(!STATUSES.includes(statusRaw.replace(/\s/g,''))&&REASONS.includes(statusRaw)){timeRaw=detailRaw;detailRaw=reasonRaw;reasonRaw=statusRaw;statusRaw='결'}const found=PEOPLE.find(p=>cleanName(p.name)===cleanName(raw));if(!found){errors.push(`${i+1}행: 고정 명단에 없는 이름 [${raw}]`);continue}const status=statusRaw.replace(/\s/g,'');if(!STATUSES.includes(status)){errors.push(`${i+1}행: ${raw}의 상태 [${statusRaw}]가 올바르지 않습니다.`);continue}if(updates.has(found.name))duplicates.push(`${i+1}행: ${found.name} 중복 입력(마지막 입력 적용)`);updates.set(found.name,{status,reason:reasonRaw,detail:detailRaw,time:timeRaw});valid++}
-for(const [name,p] of updates)state.people[name]=p;save();renderResults();const m=document.getElementById('bulkMessage');m.classList.remove('hidden');m.className='notice '+(errors.length?'':'success');m.textContent=`${updates.size}명 출결 적용 완료${valid!==updates.size?` (입력 ${valid}건)`:''}. 입력하지 않은 인원은 기존 상태(처음에는 미보고)를 유지합니다.`+(duplicates.length?'\n'+duplicates.join('\n'):'')+(errors.length?'\n검토 필요:\n'+errors.join('\n'):'');m.scrollIntoView({behavior:'smooth',block:'nearest'})}
+let outputFormat='instrument';
+function finalMeetingName(){return ({'tue-all':'관현악 전체 모임','tue-army':'전체 모임 군악대','sat-army':'군악대 모임','sat-strings':'현악 파트 모임','sat-committee':'관현악 예배위원 모임'})[activeMeeting]||MEETING_LABELS[activeMeeting]}
+function finalTitle(){const [y,m,d]=state.date.split('-').map(Number),dt=new Date(y,m-1,d),day='일월화수목금토'[dt.getDay()];return `< ${m}. ${d}.(${day}) ${finalMeetingName()} 최종 출결 >`}
+function teamCountLabel(){return activeMeeting==='tue-all'?'◆ 관현악 재적 현황':activeMeeting==='sat-strings'?'◆ 현악 명단':activeMeeting==='sat-committee'?'◆ 관현악 예배위원 명단':'◆ 군악대 명단'}
+function teamStatusLine(name,p){
+ // 아직 기록하지 않은 이름은 이름/ 형식으로, 실제 입력한 출결은 이름/상태/사유/시간으로 표시
+ if(!Object.prototype.hasOwnProperty.call(state.people,name)&&p.status==='미보고')return name+'/';
+ const fields=[name,p.status];
+ if(p.status==='결'||p.status==='부분'){
+  const reason=String(p.reason||'').trim(),time=String(p.time||'').trim().replace(/~/g,'～');
+  if(reason||time)fields.push(reason);
+  if(time)fields.push(time);
+ }
+ return fields.join('/');
+}
+function computeTeam(){
+ const valid=new Set(PEOPLE.map(x=>x.name)),seen=new Set();
+ const result=[finalTitle(),''],attendanceLines=[],absenceLines=[];
+ for(const [team,names] of TEAM_ROSTER){
+  for(const name of names.split(/\s+/).filter(Boolean)){
+   if(!valid.has(name)||seen.has(name))continue;
+   seen.add(name);
+   const p=getForOutput(name),line=teamStatusLine(name,p);result.push(line);
+   if(p.status==='출'||p.status==='부분')attendanceLines.push(line);else absenceLines.push(line);
+  }
+ }
+ // 악기별 명단에 추가했지만 팀을 아직 지정하지 않은 인원도 결과에서 누락하지 않는다.
+ for(const {name} of PEOPLE){
+  if(seen.has(name))continue;
+  const p=getForOutput(name),line=teamStatusLine(name,p);result.push(line);
+  if(p.status==='출'||p.status==='부분')attendanceLines.push(line);else absenceLines.push(line);
+ }
+ return {full:result.join('\n'),attText:[finalTitle(),'',...attendanceLines].join('\n'),absText:[finalTitle(),'',...absenceLines].join('\n')};
+}
+function renderResults(){
+ document.getElementById('dateLabel').textContent='선택: '+titleDate();
+ const o=compute(),c=o.counts;
+ document.getElementById('mainTitle').textContent='관현악, 군악대 출결 관리';
+ document.title='관현악, 군악대 출결 관리';
+ document.getElementById('outputMeetingName').textContent=MEETING_LABELS[activeMeeting]+' · '+state.date;
+ const missingParts=partMissingSummary();
+ document.getElementById('stats').innerHTML=[['전체',c.total],['참석',c.att],['부분 참석',c.partial],['미보고',c.unreported],['파트미보고',c.partUnreported],['불참',c.abs-c.unreported]].map(([l,n])=>l==='파트미보고'
+  ? `<div class="stat part-stat"><small>파트미보고</small><b>${n?n+'명':'없음'}</b>${missingParts.teams.length?`<span class="part-teams">${missingParts.teams.map(t=>esc(t.name.replace(/^\s*(?:>>|＞＞)\s*/,''))).join(' ')}</span>`:''}</div>`
+  : `<div class="stat"><small>${l}</small><b>${n}명</b></div>`).join('');
+ const msg=document.getElementById('checkMessage');msg.className='notice '+(c.total===c.att+c.abs?'success':'');
+ const extra=activeMeeting==='tue-army'?`\n주일 예배위원 제외 ${(state.excludedSunday||[]).filter(n=>PEOPLE.some(p=>p.name===n)).length}명 · 조슬기/최성빈 기본 참석 적용`:'';
+ msg.textContent=`전체 ${c.total}명 = 참석 ${c.att}명 + 불참·미보고 ${c.abs}명\n미보고 ${c.unreported}명 : ${c.unreported?o.missing.join(', '):'없음'}`+extra;
+ const displayed=outputFormat==='team'?computeTeam():o;
+ document.getElementById('result').textContent=displayed.full;
+ document.getElementById('resultHeading').textContent='복사용 최종 텍스트 · '+(outputFormat==='team'?'최종 출결':'기존 출결 양식');
+ for(const [format,id] of [['instrument','formatInstrument'],['team','formatTeam']]){const b=document.getElementById(id);b.classList.toggle('active',outputFormat===format);b.classList.toggle('secondary',outputFormat!==format)}
+ document.getElementById('traditionalResult').textContent=o.full;
+ document.getElementById('finalResult').textContent=computeTeam().full;
+}
+function displayedResult(){return outputFormat==='team'?computeTeam():compute()}
+
+function normalizedInputName(raw){
+ return cleanName(String(raw||'').replace(/^[\s•●◆▶▷◦■□*+\-–—|>\[\]()0-9.、:：]+/g,'').replace(/[\s\[\]():：.,，;|]+$/g,'').replace(/\([^)]*(?:Fl|Cla|Sax|Vn|Va|Vc|Cb|Hn|Tp|Tb|Eup|Tuba|Per|pa)[^)]*\)$/i,''));
+}
+// Compare Latin suffixes without case sensitivity, retaining the roster's original spelling.
+function bulkNameKey(name){return cleanName(name).replace(/[a-z]/g,ch=>ch.toUpperCase())}
+function applyBulk(){
+ const input=document.getElementById('bulkInput').value,lines=input.split(/\r?\n/);
+ const known=new Map(PEOPLE.map(p=>[bulkNameKey(p.name),p.name]));
+ const updates=new Map(),errors=[],duplicates=[],ignored=[];
+ let valid=0;
+ for(let i=0;i<lines.length;i++){
+  const line=lines[i].trim();if(!line)continue;
+  const cleanLine=line.replace(/^\s*[-*•●◆▶]+\s*/,'').replace(/^\d+[.)]\s*/, '').replace(/^\|\s*/, '').replace(/\s*\|$/,'').trim();
+  let fields=cleanLine.split('/').map(x=>x.trim());
+  // 이름/상태 외에도 쉼표나 탭으로 분리된 출결 기록을 허용한다.
+  if(fields.length<2){fields=cleanLine.split(/[\t,，:：]+/).map(x=>x.trim()).filter(Boolean)}
+  if(fields.length<2){const m=cleanLine.match(/^(.+?)\s+(출|결|부분|미보고|파트미보고)(?:\s+(.+))?$/);if(m)fields=[m[1],m[2],m[3]||'']}
+  const raw=fields[0]||'',name=known.get(bulkNameKey(normalizedInputName(raw)));
+  if(!name){ignored.push(raw||line);continue}
+  // 이름만 있거나 이름/만 입력하면 아직 기록하지 않은 상태를 유지한다.
+  if(fields.length<2||!fields[1])continue;
+  if(fields.length>5){errors.push(`${i+1}행: ${name} 항목이 5개를 초과합니다.`);continue}
+  let [,statusRaw='',reasonRaw='',detailRaw='',timeRaw='']=fields;
+  if(!STATUSES.includes(statusRaw.replace(/\s/g,''))&&REASONS.includes(statusRaw)){
+   timeRaw=detailRaw;detailRaw=reasonRaw;reasonRaw=statusRaw;statusRaw='결';
+  }
+  const status=statusRaw.replace(/\s/g,'');
+  if(activeMeeting!=='tue-army'&&reasonRaw==='예배위원'){
+   errors.push(`${i+1}행: 예배위원 사유는 (화) 전체모임 군악대에서만 사용할 수 있습니다.`);continue;
+  }
+  if(!STATUSES.includes(status)){
+   errors.push(`${i+1}행: ${name}의 상태 [${statusRaw}]를 확인하세요.`);continue;
+  }
+  if(updates.has(name))duplicates.push(`${i+1}행: ${name} 중복 입력(마지막 입력 적용)`);
+  updates.set(name,{status,reason:reasonRaw,detail:detailRaw,time:timeRaw});valid++;
+ }
+ for(const [name,p] of updates)state.people[name]=p;
+ save();renderResults();
+ const m=document.getElementById('bulkMessage');m.classList.remove('hidden');m.className='notice '+(errors.length?'':'success');
+ m.textContent=`${updates.size}명 출결 적용 완료. 입력 순서와 관계없이 선택한 모임의 악기별·파트별 명단 순서로 결과를 정리합니다.`+
+  (ignored.length?`\n현재 모임의 악기별 명단에 없는 ${ignored.length}개 항목은 집계하지 않았습니다: ${ignored.slice(0,15).join(', ')}${ignored.length>15?' 외':''}`:'')+
+  (duplicates.length?'\n'+duplicates.join('\n'):'')+(errors.length?'\n확인 필요:\n'+errors.join('\n'):'');
+ m.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
 async function copy(text,button){try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(text)}else{const el=document.createElement('textarea');el.value=text;el.style.position='fixed';el.style.opacity='0';document.body.appendChild(el);el.select();const ok=document.execCommand('copy');el.remove();if(!ok)throw Error('지원하지 않음')}const old=button.textContent;button.textContent='복사 완료';setTimeout(()=>button.textContent=old,1700)}catch(e){window.prompt('자동 복사가 지원되지 않습니다. 아래 텍스트를 직접 복사하세요.',text)}}
-loadRoster();loadReasons();migrateExistingRosterAndReasons();loadTemplate();load();if(!state.date)state.date=localDate();
+loadRoster();loadReasons();migrateExistingRosterAndReasons();ensureSundayReason();loadTeamRoster();loadTemplate();
+ const initialDate=localStorage.getItem(MULTI_PREFIX+'-last-date');
+ state.date=/^\d{4}-\d\d-\d\d$/.test(initialDate||'')?initialDate:localDate();load();
 const yearSelect=document.getElementById('yearSelect'),monthSelect=document.getElementById('monthSelect'),daySelect=document.getElementById('daySelect');
 function addOptions(select,lo,hi,suffix){select.replaceChildren();for(let i=lo;i<=hi;i++){const o=document.createElement('option');o.value=String(i);o.textContent=i+suffix;select.appendChild(o)}}
 function syncDateControls(){const [y,m,d]=state.date.split('-').map(Number);addOptions(yearSelect,Math.min(2020,y),Math.max(2040,y),'년');addOptions(monthSelect,1,12,'월');yearSelect.value=String(y);monthSelect.value=String(m);syncDays(d)}
 function syncDays(preferred){const y=Number(yearSelect.value),m=Number(monthSelect.value),days=new Date(y,m,0).getDate();addOptions(daySelect,1,days,'일');daySelect.value=String(Math.min(preferred||1,days))}
-function saveDateControls(){const y=Number(yearSelect.value),m=Number(monthSelect.value),d=Number(daySelect.value);state.date=[String(y),String(m).padStart(2,'0'),String(d).padStart(2,'0')].join('-');save();renderResults()}
-yearSelect.addEventListener('change',()=>{syncDays(Number(daySelect.value));saveDateControls()});
-monthSelect.addEventListener('change',()=>{syncDays(Number(daySelect.value));saveDateControls()});
-daySelect.addEventListener('change',saveDateControls);
-document.getElementById('todayBtn').addEventListener('click',()=>{state.date=localDate();syncDateControls();save();renderResults()});syncDateControls();
+function saveDateControls(){const y=Number(yearSelect.value),m=Number(monthSelect.value),d=Number(daySelect.value);
+ const next=[String(y),String(m).padStart(2,'0'),String(d).padStart(2,'0')].join('-');
+ if(next!==state.date){save();state.date=next;load();}
+ save();renderSunday();renderResults();}
+ yearSelect.addEventListener('change',()=>{syncDays(Number(daySelect.value));saveDateControls()});
+ monthSelect.addEventListener('change',()=>{syncDays(Number(daySelect.value));saveDateControls()});
+ daySelect.addEventListener('change',saveDateControls);
+ document.getElementById('todayBtn').addEventListener('click',()=>{save();state.date=localDate();load();syncDateControls();save();renderSunday();renderResults()});syncDateControls();
+
 document.getElementById('applyBulk').addEventListener('click',applyBulk);
 document.getElementById('clearBulk').addEventListener('click',()=>document.getElementById('bulkInput').value='');
-const exampleLines=['김계시/출','최계시/미보고','박계시/부분/가정사/가족모임/16:00~','이계시/결/개인사/개인보고'];
-const exampleText=exampleLines.join(String.fromCharCode(10));
-document.getElementById('bulkInput').placeholder=exampleText;
-document.getElementById('example').addEventListener('click',()=>{document.getElementById('bulkInput').value=exampleText});
+function bulkExampleText(){
+ return ['김계시/출','최계시/미보고','박계시/부분/가정사/가족모임/16:00~','이계시/결/개인사/개인보고'].join('\n');
+}
+function refreshBulkExample(){document.getElementById('bulkInput').placeholder=bulkExampleText()}
+refreshBulkExample();
 document.getElementById('reset').addEventListener('click',()=>{if(!confirm(`${PEOPLE.length}명 출결 상태를 모두 미보고로 초기화할까요?`))return;state.people={};save();renderResults();document.getElementById('bulkMessage').classList.add('hidden')});
-document.getElementById('copyAll').addEventListener('click',e=>copy(compute().full,e.currentTarget));document.getElementById('copyAtt').addEventListener('click',e=>copy(compute().attText,e.currentTarget));document.getElementById('copyAbsent').addEventListener('click',e=>copy(compute().absText,e.currentTarget));
+document.getElementById('copyAll').addEventListener('click',e=>copy(displayedResult().full,e.currentTarget));document.getElementById('copyAtt').addEventListener('click',e=>copy(displayedResult().attText,e.currentTarget));document.getElementById('copyAbsent').addEventListener('click',e=>copy(displayedResult().absText,e.currentTarget));
+for(const [format,id] of [['instrument','formatInstrument'],['team','formatTeam']])document.getElementById(id).addEventListener('click',()=>{outputFormat=format;renderResults()});
+// Narrow screens: switch between existing result panels without changing content or copy actions.
+function selectMobileOutput(view){
+ const selected=view==='final'?'final':'traditional';
+ document.getElementById('dualResults').dataset.mobileView=selected;
+ for(const [id,panel] of [['showTraditionalResult','traditional'],['showFinalResult','final']]){
+  const active=selected===panel;
+  const button=document.getElementById(id);
+  button.classList.toggle('active',active);
+  button.setAttribute('aria-pressed',String(active));
+ }
+}
+document.getElementById('showTraditionalResult').addEventListener('click',()=>selectMobileOutput('traditional'));
+document.getElementById('showFinalResult').addEventListener('click',()=>selectMobileOutput('final'));
+// Always-visible results: independent copy buttons for each original output format.
+for(const [id,format,part] of [
+ ['copyTraditionalAll','instrument','full'],['copyTraditionalAtt','instrument','attText'],['copyTraditionalAbs','instrument','absText'],
+ ['copyFinalAll','team','full'],['copyFinalAtt','team','attText'],['copyFinalAbs','team','absText']
+]){
+ document.getElementById(id).addEventListener('click',e=>{
+  const result=format==='instrument'?compute():computeTeam();
+  copy(result[part],e.currentTarget);
+ });
+}
+
 
 let selectedRoster=null;
 let draggingRoster=null;
+let selectedInstrument=null;
+let draggingInstrument=null;
 function rosterNames(ri){return ROSTER[ri][1].split(/\s+/).filter(Boolean)}
 function moveRoster(fromRi,fromNi,toRi,toNi=null){
  if(fromRi===toRi&&fromNi===toNi){selectedRoster=null;renderRoster();return}
@@ -228,25 +727,71 @@ function moveRoster(fromRi,fromNi,toRi,toNi=null){
  commitRoster(fromRi===toRi?`${name} 님의 순서를 변경했습니다.`:`${name} 님을 ${ROSTER[fromRi][0]} → ${ROSTER[toRi][0]} 악기로 이동했습니다.`,ROSTER[toRi][0]);
 }
 function selectOrMoveTo(ri,ni){
+ selectedInstrument=null;
  if(selectedRoster){const from=selectedRoster;selectedRoster=null;moveRoster(from.ri,from.ni,ri,ni)}
  else{selectedRoster={ri,ni};renderRoster();rosterNotice('선택한 사람을 옮길 악기 제목이나 다른 이름을 누르세요. 다시 누르면 선택이 해제됩니다.')}
 }
-function selectRosterForMove(ri,ni){selectedRoster={ri,ni};renderRoster();rosterNotice('이동할 악기 이름 또는 대상 이름을 누르세요. 다른 악기로 이동해도 출결 상태는 유지됩니다.')}
+function selectRosterForMove(ri,ni){selectedInstrument=null;selectedRoster={ri,ni};renderRoster();rosterNotice('이동할 악기 이름 또는 대상 이름을 누르세요. 다른 악기로 이동해도 출결 상태는 유지됩니다.')}
+function reorderInstrument(fromRi,toRi){
+ if(fromRi===toRi){selectedInstrument=null;renderRoster();return}
+ if(!Number.isInteger(fromRi)||!Number.isInteger(toRi)||fromRi<0||toRi<0||fromRi>=ROSTER.length||toRi>=ROSTER.length)return;
+ const [moved]=ROSTER.splice(fromRi,1);
+ ROSTER.splice(toRi,0,moved);
+ selectedInstrument=null;draggingInstrument=null;
+ // 출력 양식의 악기 줄도 ③의 순서에 맞게 정렬하고 나머지 문구는 유지한다.
+ const names=new Set(ROSTER.map(r=>r[0]));
+ const order=ROSTER.map(r=>r[0]);
+ let next=0;
+ templateText=ensureInstrumentLines(templateText).split('\n').map(line=>{
+  const trimmed=line.trim();
+  if(!names.has(trimmed)||next>=order.length)return line;
+  const leading=(line.match(/^\s*/)||[''])[0],trailing=(line.match(/\s*$/)||[''])[0];
+  return leading+order[next++]+trailing;
+ }).join('\n');
+ commitRoster(`${moved[0]} 악기를 ${toRi+1}번째로 이동했습니다. ⑤ 출결 결과에도 반영했습니다.`,moved[0]);
+}
+function selectInstrumentForMove(ri){
+ selectedRoster=null;selectedInstrument=ri;
+ renderRoster();
+ rosterNotice('이동할 악기 이름을 누르면 악기 순서가 변경됩니다. 같은 악기를 누르면 선택이 해제됩니다.');
+}
+function instrumentClick(ri){
+ if(selectedRoster){const from=selectedRoster;moveRoster(from.ri,from.ni,ri);return}
+ if(selectedInstrument!==null){reorderInstrument(selectedInstrument,ri);return}
+ const inst=ROSTER[ri][0];
+ rosterInstrument.value=inst;lastSelectedInstrument=inst;
+ rosterNotice(`${inst} 악기를 선택했습니다. 위에서 인원을 추가할 수 있습니다. 악기 순서 변경은 길게 눌러 선택하세요.`);
+}
 function renderRoster(){
  const root=document.getElementById('rosterList');root.replaceChildren();
  document.getElementById('rosterTotal').textContent=`총 ${PEOPLE.length}명`;
- const sub=document.querySelector('header .muted');if(sub)sub.textContent=`현재 ${PEOPLE.length}명 기준 · 슬래시(/) 구분 텍스트 붙여넣기 · 결과 복사`;
+ const sub=document.getElementById('headerCount');if(sub)sub.textContent=`${MEETING_LABELS[activeMeeting]} · 현재 ${PEOPLE.length}명 기준`;
  ROSTER.forEach(([inst,names],ri)=>{
   const row=document.createElement('div');row.className='roster-row';row.dataset.ri=String(ri);
   const tag=document.createElement('div');tag.className='roster-inst';
-  const label=document.createElement('span');label.className='inst-title';label.textContent=inst;label.title=`${inst} 악기로 선택된 인원 이동`;
+  const label=document.createElement('span');label.className='inst-title';label.textContent=inst;label.draggable=!window.matchMedia('(pointer:coarse)').matches;
+  label.title=`${inst}: 길게 눌러 선택한 뒤 다른 악기 이름을 누르면 순서 변경, PC 드래그 가능`;
+  label.setAttribute('role','button');label.setAttribute('tabindex','0');
+  label.setAttribute('aria-label',`${inst} 악기: 길게 눌러 순서 이동`);
   if(selectedRoster)label.classList.add('target-ready');
-  label.addEventListener('click',()=>{if(selectedRoster){const from=selectedRoster;moveRoster(from.ri,from.ni,ri)}else{rosterInstrument.value=inst;lastSelectedInstrument=inst;rosterNotice(`${inst} 악기를 선택했습니다. 위에서 인원을 추가할 수 있습니다.`)}});
-  tag.appendChild(label);
-  const actions=document.createElement('div');actions.className='inst-actions';
-  const editBtn=document.createElement('button');editBtn.type='button';editBtn.textContent='✎';editBtn.title=`${inst} 악기 이름 수정`;editBtn.setAttribute('aria-label',`${inst} 악기 이름 수정`);editBtn.addEventListener('click',e=>{e.stopPropagation();renameInstrument(inst)});actions.appendChild(editBtn);
-  const removeBtn=document.createElement('button');removeBtn.type='button';removeBtn.textContent='×';removeBtn.className='remove';removeBtn.title=`${inst} 악기 삭제`;removeBtn.setAttribute('aria-label',`${inst} 악기 삭제`);removeBtn.addEventListener('click',e=>{e.stopPropagation();deleteInstrument(inst)});actions.appendChild(removeBtn);
-  tag.appendChild(actions);row.appendChild(tag);
+  if(selectedInstrument===ri)label.classList.add('instrument-selected');
+  let hold=null,holdPoint=null,longPressed=false;
+  label.addEventListener('pointerdown',e=>{
+   if(e.pointerType!=='touch'&&e.pointerType!=='pen')return;
+   holdPoint={x:e.clientX,y:e.clientY};longPressed=false;
+   hold=setTimeout(()=>{hold=null;longPressed=true;selectInstrumentForMove(ri)},480);
+  });
+  label.addEventListener('pointermove',e=>{if(hold&&holdPoint&&Math.hypot(e.clientX-holdPoint.x,e.clientY-holdPoint.y)>12){clearTimeout(hold);hold=null}});
+  for(const evt of ['pointerup','pointercancel','pointerleave'])label.addEventListener(evt,()=>{if(hold){clearTimeout(hold);hold=null}});
+  label.addEventListener('contextmenu',e=>e.preventDefault());
+  label.addEventListener('click',e=>{if(longPressed){e.preventDefault();longPressed=false;return}instrumentClick(ri)});
+  label.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();if(selectedInstrument===null&&selectedRoster===null)selectInstrumentForMove(ri);else instrumentClick(ri)}});
+  label.addEventListener('dragstart',e=>{draggingInstrument=ri;selectedInstrument=null;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',inst)});
+  label.addEventListener('dragover',e=>{if(draggingInstrument!==null){e.preventDefault();e.stopPropagation();e.dataTransfer.dropEffect='move';label.classList.add('instrument-target')}});
+  label.addEventListener('dragleave',()=>label.classList.remove('instrument-target'));
+  label.addEventListener('drop',e=>{if(draggingInstrument===null)return;e.preventDefault();e.stopPropagation();const from=draggingInstrument;draggingInstrument=null;reorderInstrument(from,ri)});
+  label.addEventListener('dragend',()=>{draggingInstrument=null;document.querySelectorAll('.instrument-target,.instrument-drag-over').forEach(el=>el.classList.remove('instrument-target','instrument-drag-over'))});
+  tag.appendChild(label);row.appendChild(tag);
   const members=document.createElement('div');members.className='roster-members';
   const list=names.split(/\s+/).filter(Boolean);
   list.forEach((name,ni)=>{
@@ -276,14 +821,22 @@ function renderRoster(){
    members.appendChild(item);
   });
   if(!list.length){const blank=document.createElement('span');blank.className='hint';blank.textContent='등록 인원 없음 · 악기 이름을 누르면 이동 가능';members.appendChild(blank)}
-  row.addEventListener('dragover',e=>{if(!draggingRoster||e.target.closest('.roster-member'))return;e.preventDefault();row.classList.add('drop-ready')});
-  row.addEventListener('dragleave',e=>{if(!row.contains(e.relatedTarget))row.classList.remove('drop-ready')});
-  row.addEventListener('drop',e=>{if(!draggingRoster||e.target.closest('.roster-member'))return;e.preventDefault();row.classList.remove('drop-ready');const from=draggingRoster;draggingRoster=null;moveRoster(from.ri,from.ni,ri)});
+  row.addEventListener('dragover',e=>{
+   if(draggingInstrument!==null){e.preventDefault();row.classList.add('instrument-drag-over');return}
+   if(!draggingRoster||e.target.closest('.roster-member'))return;
+   e.preventDefault();row.classList.add('drop-ready');
+  });
+  row.addEventListener('dragleave',e=>{if(!row.contains(e.relatedTarget))row.classList.remove('drop-ready','instrument-drag-over')});
+  row.addEventListener('drop',e=>{
+   if(draggingInstrument!==null){e.preventDefault();const from=draggingInstrument;draggingInstrument=null;row.classList.remove('instrument-drag-over');reorderInstrument(from,ri);return}
+   if(!draggingRoster||e.target.closest('.roster-member'))return;
+   e.preventDefault();row.classList.remove('drop-ready');const from=draggingRoster;draggingRoster=null;moveRoster(from.ri,from.ni,ri);
+  });
   row.appendChild(members);root.appendChild(row);
  });
 }
 function rosterNotice(message){const el=document.getElementById('rosterMessage');el.className='notice success';el.textContent=message}
-function commitRoster(message,preferred){rebuildPeople();templateText=ensureInstrumentLines(templateText);saveRoster();save();saveTemplateStorage();refreshInstrumentSelect(preferred);renderRoster();renderTemplateFields();renderResults();rosterNotice(message)}
+function commitRoster(message,preferred){const beforeSync=readMeetingRoster(activeMeeting);rebuildPeople();syncTeams();saveTeamRoster();templateText=ensureInstrumentLines(templateText);saveRoster();linkedTuesdayReconcile(beforeSync);save();saveTemplateStorage();refreshInstrumentSelect(preferred);renderRoster();renderTeams();renderSunday();renderResults();rosterNotice(message)}
 function existsRoster(name,original=''){return PEOPLE.some(p=>cleanName(p.name)===cleanName(name)&&p.name!==original)}
 function modifyRoster(ri,ni,action){
  const list=ROSTER[ri][1].split(/\s+/).filter(Boolean);const old=list[ni];
@@ -291,9 +844,9 @@ function modifyRoster(ri,ni,action){
   const raw=prompt('수정할 이름을 입력하세요.',old);if(raw===null)return;const next=raw.trim();
   if(!next||/\s/.test(next)){alert('이름은 공백 없이 입력하세요.');return}
   if(existsRoster(next,old)){alert('이미 등록된 이름입니다.');return}
-  list[ni]=next;if(next!==old&&state.people[old]){state.people[next]=state.people[old];delete state.people[old]}
+  list[ni]=next;if(next!==old){replaceTeamName(old,next);linkedTuesdayRename(old,next);if(SYNC_MEETINGS.includes(activeMeeting)){const saved=readMeetingRoster(activeMeeting);for(const row of saved)row[1]=row[1].split(/\s+/).filter(Boolean).map(n=>n===old?next:n).join(' ');writeMeetingRoster(activeMeeting,saved)}if(state.people[old]){state.people[next]=state.people[old];delete state.people[old]}if(state.excludedSunday)state.excludedSunday=state.excludedSunday.map(n=>n===old?next:n)}
  }else if(action==='remove'){
-  if(!confirm(`${old} 님을 명단에서 삭제할까요?`))return;list.splice(ni,1);delete state.people[old];
+  if(!confirm(`${old} 님을 명단에서 삭제할까요?`))return;list.splice(ni,1);removeTeamName(old);delete state.people[old];if(state.excludedSunday)state.excludedSunday=state.excludedSunday.filter(n=>n!==old);
  }else{return}
  ROSTER[ri][1]=list.join(' ');commitRoster('명단 변경사항을 저장했습니다.');
 }
@@ -316,11 +869,19 @@ rosterInstrument.addEventListener('change',()=>{
   addInstrument();
  }else lastSelectedInstrument=rosterInstrument.value;
 });
-function addRoster(){const field=document.getElementById('rosterName'),name=field.value.trim();
- if(!name||/\s/.test(name)){alert('이름을 공백 없이 입력하세요.');field.focus();return}
- if(existsRoster(name)){alert('이미 등록된 이름입니다.');return}
- const index=ROSTER.findIndex(r=>r[0]===rosterInstrument.value);if(index<0)return;
- ROSTER[index][1]=[ROSTER[index][1],name].filter(Boolean).join(' ');field.value='';commitRoster(`${name} 님을 추가했습니다.`);
+function addRoster(){
+ const field=document.getElementById('rosterName'),name=field.value.trim();
+ if(!name||/\s|\//.test(name)){alert('이름은 공백과 / 없이 입력하세요.');field.focus();return}
+ const inst=rosterInstrument.value,part=document.getElementById('rosterPart').value;
+ const index=ROSTER.findIndex(r=>r[0]===inst),partIndex=TEAM_ROSTER.findIndex(r=>r[0]===part);
+ if(index<0||partIndex<0){alert('악기와 파트를 선택하세요. 파트가 없다면 + 파트 추가를 이용하세요.');return}
+ const existing=PEOPLE.find(p=>cleanName(p.name)===cleanName(name));
+ if(existing&&TEAM_ROSTER.some(([,names])=>names.split(/\s+/).includes(existing.name))){alert('이미 파트별 명단에 등록된 이름입니다.');return}
+ if(!existing)ROSTER[index][1]=[ROSTER[index][1],name].filter(Boolean).join(' ');
+ TEAM_ROSTER[partIndex][1]=[TEAM_ROSTER[partIndex][1],existing?.name||name].filter(Boolean).join(' ');
+ field.value='';
+ if(!existing)commitRoster(`${name} 님을 ${inst} 악기와 ${part} 파트에 추가했습니다.`,inst);
+ else commitTeams(`${name} 님을 ${part} 파트에 배정했습니다. (기존 악기는 ${existing.instrument})`);
 }
 document.getElementById('addRoster').addEventListener('click',addRoster);
 document.getElementById('rosterName').addEventListener('keydown',e=>{if(e.key==='Enter')addRoster()});
@@ -334,64 +895,90 @@ function addInstrument(){
  if(ROSTER.some(r=>r[0].toLocaleLowerCase()===name.toLocaleLowerCase())){alert('이미 등록된 악기입니다.');return}
  ROSTER.push([name,'']);commitRoster(`${name} 악기를 추가했습니다.`,name);
 }
-function renameInstrument(old){
- const entry=ROSTER.find(r=>r[0]===old);if(!entry)return;
- const raw=prompt('수정할 악기 이름을 입력하세요.',old);if(raw===null)return;
- const next=normalizedInstrumentName(raw);
- if(!next||/[\r\n/]/.test(next)){alert('악기 이름을 입력하세요. 줄바꿈과 /는 사용할 수 없습니다.');return}
- if(next!==old&&ROSTER.some(r=>r[0].toLocaleLowerCase()===next.toLocaleLowerCase())){alert('이미 등록된 악기입니다.');return}
- if(next===old)return;
- const lines=templateText.split('\n');templateText=lines.map(line=>line.trim()===old?line.replace(old,next):line).join('\n');
- entry[0]=next;
- commitRoster(`${old} → ${next} 악기 이름을 변경했습니다.`,next);
-}
-function deleteInstrument(name){
- const index=ROSTER.findIndex(r=>r[0]===name);if(index<0)return;
- if(ROSTER[index][1].trim()){alert('등록 인원이 있는 악기는 삭제할 수 없습니다. 먼저 해당 악기의 인원을 이동하거나 삭제하세요.');return}
- if(!confirm(`${name} 악기를 삭제할까요?`))return;
- ROSTER.splice(index,1);
- templateText=templateText.split('\n').filter(line=>line.trim()!==name).join('\n');
- commitRoster(`${name} 악기를 삭제했습니다.`);
-}
-
 function managerButton(label,title,fn,disabled=false,cls='secondary'){
  const button=document.createElement('button');button.type='button';button.textContent=label;button.title=title;button.setAttribute('aria-label',title);button.className=cls;button.disabled=disabled;button.addEventListener('click',fn);return button;
 }
 function messageTo(id,text,success=true){const el=document.getElementById(id);el.className='notice '+(success?'success':'');el.textContent=text}
-function renderTemplateFields(){document.getElementById('fullTemplate').value=templateText}
-function saveTemplate(){
- const edited=document.getElementById('fullTemplate').value.replace(/\r\n/g,'\n');
- const required=['{날짜}','{참석}','{부분}','{불참}','{미보고}','{불참사유별}'];
- const missing=required.filter(x=>!edited.includes(x));
- if(missing.length){messageTo('templateMessage',`양식에 자동 입력 항목 ${missing.join(', ')}을(를) 남겨 주세요.`,false);return}
- const merged=ensureInstrumentLines(edited);
- templateText=merged;saveTemplateStorage();renderTemplateFields();renderResults();
- messageTo('templateMessage',edited===merged?'출결 양식을 저장했습니다. ⑥ 출결 결과에 반영되었습니다.':'기존 악기 누락을 막기 위해 빠진 악기 줄을 추가하고 양식을 저장했습니다.');
-}
-document.getElementById('saveTemplate').addEventListener('click',saveTemplate);
-document.getElementById('resetTemplate').addEventListener('click',()=>{
- if(!confirm('출결 양식을 기본 형식으로 되돌릴까요? 명단 및 불참 사유는 유지됩니다.'))return;
- templateText=defaultTemplate();saveTemplateStorage();renderTemplateFields();renderResults();messageTo('templateMessage','기본 출결 양식으로 되돌렸습니다.');
-});
-document.getElementById('previewTemplate').addEventListener('click',()=>document.getElementById('output').scrollIntoView({behavior:'smooth',block:'start'}));
-renderTemplateFields();
-
 function reasonIsUsed(reason){return Object.values(state.people).some(p=>p&&p.reason===reason)}
+let selectedReason=null;
+let draggingReason=null;
+function moveReason(from,to){
+ if(!Number.isInteger(from)||!Number.isInteger(to)||from<0||to<0||from>=REASONS.length||to>=REASONS.length)return;
+ if(from===to){selectedReason=null;renderReasons();return}
+ const [moved]=REASONS.splice(from,1);
+ REASONS.splice(to,0,moved);
+ selectedReason=null;draggingReason=null;
+ saveReasons();renderReasons();renderResults();
+ messageTo('reasonMessage',`${moved} 사유의 출력 순서를 변경했습니다.`);
+}
+function reasonClick(i){
+ if(selectedReason===null){selectedReason=i;renderReasons();messageTo('reasonMessage','이동할 불참 사유를 눌러 주세요. 같은 사유를 누르면 선택이 해제됩니다.');return}
+ moveReason(selectedReason,i);
+}
+function resetReasonOrder(){
+ // 기본 제공 사유의 순서만 초기 배치로 복원하고, 별도로 추가/수정한 사유는 삭제하지 않는다.
+ const baseOrder=DEFAULT_REASON_ORDER.filter(reason=>REASONS.includes(reason));
+ const extras=REASONS.filter(reason=>!DEFAULT_REASON_ORDER.includes(reason));
+ const next=[...baseOrder,...extras];
+ const changed=next.some((reason,i)=>REASONS[i]!==reason);
+ selectedReason=null;draggingReason=null;
+ if(changed){REASONS.splice(0,REASONS.length,...next);saveReasons()}
+ renderReasons();renderResults();
+ messageTo('reasonMessage',changed?'기존 순서로 적용했습니다. 추가한 사유는 유지됩니다.':'이미 기존 순서입니다.');
+}
 function renderReasons(){
  const root=document.getElementById('reasonList');root.replaceChildren();
+ const showSunday=activeMeeting==='tue-army';
+ document.getElementById('reasonHint').textContent=(showSunday?'미보고와 예배위원은':'미보고는')+' 기본 항목이므로 이름 수정·삭제는 할 수 없으며 순서만 변경할 수 있습니다. 현재 출결에서 사용 중인 사유는 삭제할 수 없습니다.';
  REASONS.forEach((reason,i)=>{
-  const row=document.createElement('div');row.className='manager-item';
-  const name=document.createElement('span');name.className='manager-title';name.textContent=reason;row.appendChild(name);
-  if(reason==='미보고'){const fixed=document.createElement('span');fixed.className='tag';fixed.textContent='기본 항목';row.appendChild(fixed)}
-  function move(direction){const j=i+direction;if(j<0||j>=REASONS.length)return;
-   [REASONS[i],REASONS[j]]=[REASONS[j],REASONS[i]];
-   saveReasons();renderReasons();renderResults();messageTo('reasonMessage','불참 사유 순서를 저장했습니다.');}
-  row.appendChild(managerButton('▲',`${reason} 순서 위로`,()=>move(-1),i===0));
-  row.appendChild(managerButton('▼',`${reason} 순서 아래로`,()=>move(1),i===REASONS.length-1));
-  if(reason!=='미보고'){
-   row.appendChild(managerButton('✎',`${reason} 사유 수정`,()=>editReason(i)));
-   row.appendChild(managerButton('×',`${reason} 사유 삭제`,()=>deleteReason(i),false,'outline'));
-  }
+  if(reason==='예배위원'&&!showSunday)return;
+  const row=document.createElement('div');row.className='manager-item reason-item';row.dataset.reasonIndex=String(i);
+  row.draggable=!window.matchMedia('(pointer:coarse)').matches;
+  row.title=`${reason}: 선택 후 다른 사유 클릭 또는 드래그해서 이동`;
+  if(selectedReason===i)row.classList.add('selected');
+   const name=document.createElement('span');name.className='manager-title';name.textContent=reason;name.tabIndex=0;row.appendChild(name);
+   if(reason==='미보고'||reason==='예배위원'){const fixed=document.createElement('span');fixed.className='tag';fixed.textContent='기본 항목';row.appendChild(fixed)}
+   if(reason!=='미보고'&&reason!=='예배위원'){
+    row.appendChild(managerButton('✎',`${reason} 사유 수정`,()=>{selectedReason=null;editReason(i)}));
+    row.appendChild(managerButton('×',`${reason} 사유 삭제`,()=>{selectedReason=null;deleteReason(i)},false,'outline'));
+   }
+   let suppressClick=false,touch=null;
+   row.addEventListener('click',e=>{if(e.target.closest('button')||suppressClick){suppressClick=false;return}reasonClick(i)});
+   row.addEventListener('dragstart',e=>{
+    if(e.target.closest('button')){e.preventDefault();return}
+    draggingReason=i;selectedReason=null;e.dataTransfer.effectAllowed='move';e.dataTransfer.setData('text/plain',reason);
+   });
+   row.addEventListener('dragover',e=>{if(draggingReason===null)return;e.preventDefault();row.classList.add('drag-over')});
+   row.addEventListener('dragleave',()=>row.classList.remove('drag-over'));
+   row.addEventListener('drop',e=>{if(draggingReason===null)return;e.preventDefault();const from=draggingReason;draggingReason=null;moveReason(from,i)});
+   row.addEventListener('dragend',()=>{draggingReason=null;root.querySelectorAll('.drag-over').forEach(el=>el.classList.remove('drag-over'))});
+   name.addEventListener('pointerdown',e=>{
+    if(e.pointerType==='mouse')return;
+    touch={id:e.pointerId,target:i,initialY:e.clientY,moved:false};name.setPointerCapture(e.pointerId);
+   });
+   name.addEventListener('pointermove',e=>{
+    if(!touch||touch.id!==e.pointerId)return;
+    if(Math.abs(e.clientY-touch.initialY)>8)touch.moved=true;
+    if(!touch.moved)return;
+    e.preventDefault();root.querySelectorAll('.drag-over').forEach(el=>el.classList.remove('drag-over'));
+    const target=document.elementFromPoint(e.clientX,e.clientY)?.closest('.reason-item');
+    if(target&&root.contains(target)){touch.target=Number(target.dataset.reasonIndex);target.classList.add('drag-over')}
+   });
+   const end=(e,cancel)=>{
+    if(!touch||touch.id!==e.pointerId)return;
+    const d=touch;touch=null;root.querySelectorAll('.drag-over').forEach(el=>el.classList.remove('drag-over'));
+    if(name.hasPointerCapture(e.pointerId))name.releasePointerCapture(e.pointerId);
+    if(!cancel&&d.moved){suppressClick=true;moveReason(i,d.target)}
+   };
+   name.addEventListener('pointerup',e=>end(e,false));name.addEventListener('pointercancel',e=>end(e,true));
+   name.addEventListener('keydown',e=>{if(e.key==='ArrowUp'||e.key==='ArrowDown'){
+    e.preventDefault();
+    const visibleIndices=REASONS.map((r,j)=>r==='예배위원'&&!showSunday?-1:j).filter(j=>j>=0);
+    const fromPosition=visibleIndices.indexOf(i);
+    const to=visibleIndices[Math.min(visibleIndices.length-1,Math.max(0,fromPosition+(e.key==='ArrowUp'?-1:1)))];
+    moveReason(i,to);
+    root.querySelector(`[data-reason-index="${to}"] .manager-title`)?.focus();
+   }else if(e.key==='Enter'||e.key===' '){e.preventDefault();reasonClick(i)}});
   root.appendChild(row);
  });
 }
@@ -403,21 +990,239 @@ function validReason(value,previous=''){
  return name;
 }
 function addReason(){const input=document.getElementById('newReason'),name=validReason(input.value);if(name===null){input.focus();return}
- REASONS.push(name);input.value='';saveReasons();renderReasons();renderResults();messageTo('reasonMessage',`${name} 사유를 추가했습니다.`);
+ selectedReason=null;REASONS.push(name);input.value='';saveReasons();renderReasons();renderResults();messageTo('reasonMessage',`${name} 사유를 추가했습니다.`);
 }
 function editReason(i){const prev=REASONS[i],raw=prompt('수정할 불참 사유를 입력하세요.',prev);if(raw===null)return;
  const next=validReason(raw,prev);if(next===null||next===prev)return;
- REASONS[i]=next;
+ selectedReason=null;REASONS[i]=next;
  for(const p of Object.values(state.people))if(p&&p.reason===prev)p.reason=next;
  saveReasons();save();renderReasons();renderResults();messageTo('reasonMessage',`${prev} → ${next} 사유 이름을 변경했습니다. 기존 출결 데이터에도 반영되었습니다.`);
 }
-function deleteReason(i){const reason=REASONS[i];if(reason==='미보고')return;
+function deleteReason(i){const reason=REASONS[i];if(reason==='미보고'||reason==='예배위원')return;
  if(reasonIsUsed(reason)){messageTo('reasonMessage',`${reason} 사유가 현재 출결 데이터에 사용 중이므로 삭제할 수 없습니다. 다른 사유로 변경한 뒤 삭제하세요.`,false);return}
  if(!confirm(`${reason} 불참 사유를 삭제할까요?`))return;
- REASONS.splice(i,1);saveReasons();renderReasons();renderResults();messageTo('reasonMessage',`${reason} 사유를 삭제했습니다.`);
+ selectedReason=null;REASONS.splice(i,1);saveReasons();renderReasons();renderResults();messageTo('reasonMessage',`${reason} 사유를 삭제했습니다.`);
 }
+document.getElementById('resetReasonOrder').addEventListener('click',resetReasonOrder);
 document.getElementById('addReason').addEventListener('click',addReason);
 document.getElementById('newReason').addEventListener('keydown',e=>{if(e.key==='Enter')addReason()});
+
+/* 팀별 명단: 원본 악기 명단과 인원을 공유하고 표시 순서/배정만 별도로 관리 */
+let selectedTeamMember=null,draggingTeamMember=null,selectedTeamRow=null,draggingTeamRow=null;
+function teamMembers(i){return TEAM_ROSTER[i][1].split(/\s+/).filter(Boolean)}
+function teamNotice(message){messageTo('teamMessage',message)}
+function commitTeams(message){selectedTeamMember=null;selectedTeamRow=null;saveTeamRoster();renderTeams();renderResults();if(message)teamNotice(message)}
+function moveTeamMember(fromTeam,fromIndex,toTeam,toIndex=null){
+ if(fromTeam===toTeam&&fromIndex===toIndex){selectedTeamMember=null;renderTeams();return}
+ const from=teamMembers(fromTeam),to=fromTeam===toTeam?from:teamMembers(toTeam);
+ const [name]=from.splice(fromIndex,1);if(!name)return;
+ let pos=toIndex===null?to.length:Math.max(0,Math.min(toIndex,to.length));
+ if(fromTeam===toTeam&&fromIndex<pos)pos--;
+ to.splice(pos,0,name);TEAM_ROSTER[fromTeam][1]=from.join(' ');TEAM_ROSTER[toTeam][1]=to.join(' ');
+ commitTeams(`${name} 님을 ${TEAM_ROSTER[toTeam][0]} 파트로 이동하거나 순서를 변경했습니다.`);
+}
+function teamNameClick(ti,ni){
+ if(selectedTeamRow!==null){selectedTeamRow=null;renderTeams();return}
+ if(selectedTeamMember){const from=selectedTeamMember;selectedTeamMember=null;moveTeamMember(from.ti,from.ni,ti,ni)}
+ else{selectedTeamMember={ti,ni};renderTeams();teamNotice('이동할 다른 이름이나 파트 제목을 선택하세요. PC에서는 바로 드래그할 수도 있습니다.')}
+}
+function teamHeadingClick(ti){
+ if(selectedTeamMember){const from=selectedTeamMember;selectedTeamMember=null;moveTeamMember(from.ti,from.ni,ti);return}
+ if(selectedTeamRow!==null){const from=selectedTeamRow;selectedTeamRow=null;moveTeamRow(from,ti);return}
+ selectedTeamRow=ti;renderTeams();teamNotice('순서를 바꿀 다른 파트 제목을 선택하세요.');
+}
+function moveTeamRow(from,to){
+ if(from===to){selectedTeamRow=null;renderTeams();return}
+ if(from<0||to<0||from>=TEAM_ROSTER.length||to>=TEAM_ROSTER.length)return;
+ const [item]=TEAM_ROSTER.splice(from,1);TEAM_ROSTER.splice(to,0,item);commitTeams(`${item[0]} 파트 순서를 변경했습니다.`);
+}
+const ADD_PART_OPTION='__new_part__';
+const lastPartSelections={teamAssignment:'',rosterPart:''};
+function refreshPartSelector(id,preferred=''){
+ const selector=document.getElementById(id);
+ const old=preferred||(selector.value!==ADD_PART_OPTION?selector.value:lastPartSelections[id]);
+ selector.replaceChildren();
+ for(const [part] of TEAM_ROSTER){const o=document.createElement('option');o.value=part;o.textContent=part;selector.appendChild(o)}
+ const addOption=document.createElement('option');addOption.value=ADD_PART_OPTION;addOption.textContent='＋ 파트 추가';selector.appendChild(addOption);
+ if(TEAM_ROSTER.some(([part])=>part===old))selector.value=old;
+ else selector.value=TEAM_ROSTER.length?TEAM_ROSTER[0][0]:ADD_PART_OPTION;
+ lastPartSelections[id]=selector.value;
+}
+function addPartFromSelect(id){
+ const selector=document.getElementById(id);
+ const previous=lastPartSelections[id];
+ if(TEAM_ROSTER.some(([part])=>part===previous))selector.value=previous;
+ const raw=prompt('추가할 파트 이름을 입력하세요.');
+ if(raw===null)return;
+ const name=raw.trim();
+ if(!name||/[\r\n/]/.test(name)||TEAM_ROSTER.some(([part])=>part===name)){
+  alert('파트 이름을 확인하세요. 이미 있는 이름이나 /, 줄바꿈은 사용할 수 없습니다.');return;
+ }
+ TEAM_ROSTER.push([name,'']);
+ commitTeams(`${name} 파트를 추가했습니다.`);
+ refreshPartSelector('teamAssignment',name);
+ refreshPartSelector('rosterPart',name);
+}
+for(const id of ['teamAssignment','rosterPart']){
+ document.getElementById(id).addEventListener('change',()=>{
+  const selector=document.getElementById(id);
+  if(selector.value===ADD_PART_OPTION)addPartFromSelect(id);
+  else lastPartSelections[id]=selector.value;
+ });
+}
+function renderTeamAssignment(){
+ const instSelect=document.getElementById('teamInstrument'),oldInst=instSelect.value;
+ refreshPartSelector('teamAssignment');refreshPartSelector('rosterPart');
+ instSelect.replaceChildren();
+ for(const [inst] of ROSTER){const o=document.createElement('option');o.value=inst;o.textContent=inst;instSelect.appendChild(o)}
+ if(ROSTER.some(([inst])=>inst===oldInst))instSelect.value=oldInst;
+ document.getElementById('assignTeam').disabled=!TEAM_ROSTER.length||!ROSTER.length;
+ document.getElementById('addRoster').disabled=!TEAM_ROSTER.length||!ROSTER.length;
+}
+function renderTeams(){
+ const root=document.getElementById('teamList');root.replaceChildren();
+ TEAM_ROSTER.forEach(([title,names],ti)=>{
+  const row=document.createElement('div');row.className='roster-row team-row';row.dataset.teamIndex=String(ti);
+  const side=document.createElement('div');side.className='roster-inst';
+  const label=document.createElement('span');label.className='inst-title';label.textContent=title;label.tabIndex=0;label.title='파트 순서 변경: PC 드래그 또는 클릭 후 이동할 파트 클릭';label.draggable=!window.matchMedia('(pointer:coarse)').matches;
+  if(selectedTeamRow===ti)label.classList.add('instrument-selected');
+  label.addEventListener('click',()=>{if(suppressTeamClick){suppressTeamClick=false;return}teamHeadingClick(ti)});label.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();teamHeadingClick(ti)}else if(e.key==='ArrowUp'||e.key==='ArrowDown'){e.preventDefault();const to=Math.min(TEAM_ROSTER.length-1,Math.max(0,ti+(e.key==='ArrowUp'?-1:1)));moveTeamRow(ti,to);document.querySelector(`#teamList [data-team-index=\"${to}\"] .inst-title`)?.focus()}});
+  label.addEventListener('dragstart',e=>{draggingTeamRow=ti;e.dataTransfer.setData('text/plain',title);e.dataTransfer.effectAllowed='move'});
+  label.addEventListener('dragover',e=>{if(draggingTeamRow!==null){e.preventDefault();label.classList.add('instrument-target')}});
+  label.addEventListener('dragleave',()=>label.classList.remove('instrument-target'));
+  label.addEventListener('drop',e=>{if(draggingTeamRow!==null){e.preventDefault();const from=draggingTeamRow;draggingTeamRow=null;moveTeamRow(from,ti)}});
+  label.addEventListener('dragend',()=>{draggingTeamRow=null});
+  let touch=null,suppressTeamClick=false;
+  label.addEventListener('pointerdown',e=>{
+   if(e.pointerType==='mouse')return;
+   touch={id:e.pointerId,target:ti,initialY:e.clientY,moved:false};label.setPointerCapture(e.pointerId);
+  });
+  label.addEventListener('pointermove',e=>{
+   if(!touch||touch.id!==e.pointerId)return;
+   if(Math.abs(e.clientY-touch.initialY)>8)touch.moved=true;
+   if(!touch.moved)return;
+   e.preventDefault();root.querySelectorAll('.instrument-target').forEach(el=>el.classList.remove('instrument-target'));
+   const target=document.elementFromPoint(e.clientX,e.clientY)?.closest('.team-row');
+   if(target&&root.contains(target)){touch.target=Number(target.dataset.teamIndex);target.classList.add('instrument-target')}
+  });
+  const endTouch=(e,cancel)=>{
+   if(!touch||touch.id!==e.pointerId)return;
+   const d=touch;touch=null;root.querySelectorAll('.instrument-target').forEach(el=>el.classList.remove('instrument-target'));
+   if(label.hasPointerCapture(e.pointerId))label.releasePointerCapture(e.pointerId);
+   if(!cancel&&d.moved){suppressTeamClick=true;moveTeamRow(ti,d.target)}
+  };
+  label.addEventListener('pointerup',e=>endTouch(e,false));label.addEventListener('pointercancel',e=>endTouch(e,true));
+  const actions=document.createElement('div');actions.className='team-name-actions';
+  const edit=document.createElement('button');edit.type='button';edit.className='mini-action';edit.textContent='✎';edit.title=title+' 파트 이름 수정';edit.setAttribute('aria-label',title+' 파트 이름 수정');edit.addEventListener('click',()=>{
+   const value=prompt('새 파트 이름',title);if(value===null)return;const next=value.trim();if(!next||/[/\r\n]/.test(next)||TEAM_ROSTER.some(([n],i)=>i!==ti&&n===next)){alert('사용할 수 없는 파트 이름입니다.');return}TEAM_ROSTER[ti][0]=next;commitTeams('파트 이름을 변경했습니다.');
+  });
+  const remove=document.createElement('button');remove.type='button';remove.className='mini-action remove';remove.textContent='×';remove.title=title+' 파트 삭제';remove.setAttribute('aria-label',title+' 파트 삭제');remove.addEventListener('click',()=>{
+   const size=teamMembers(ti).length;
+   if(!confirm(`${title} 파트를 삭제할까요?${size?`\n소속 ${size}명은 악기별 명단에 그대로 남으며 최종 출결에도 포함됩니다. 다른 파트로 다시 배정할 수 있습니다.`:''}`))return;
+   TEAM_ROSTER.splice(ti,1);commitTeams(`${title} 파트를 삭제했습니다. ${size?`소속 ${size}명은 악기별 명단에 남아 있습니다.`:''}`);
+  });
+  actions.append(edit,remove);side.append(label,actions);row.appendChild(side);
+  const members=document.createElement('div');members.className='roster-members';
+  teamMembers(ti).forEach((name,ni)=>{
+   const chip=document.createElement('div');chip.className='roster-member';chip.draggable=true;chip.title=`${name}: 드래그하거나 선택 후 다른 파트/이름 클릭`;
+   if(selectedTeamMember?.ti===ti&&selectedTeamMember?.ni===ni)chip.classList.add('selected');
+   const span=document.createElement('span');span.textContent=name;chip.appendChild(span);
+   const foundRi=ROSTER.findIndex(row=>row[1].split(/\s+/).includes(name));
+   const foundNi=foundRi>=0?ROSTER[foundRi][1].split(/\s+/).indexOf(name):-1;
+   if(foundRi>=0){for(const [symbol,action,descr,klass] of [['✎','edit','수정',''],['×','remove','삭제','remove']]){
+    const button=document.createElement('button');button.type='button';button.textContent=symbol;button.className=klass;button.title=`${name} ${descr} (악기별 명단 연동)`;
+    button.addEventListener('click',e=>{e.stopPropagation();modifyRoster(foundRi,foundNi,action)});chip.appendChild(button);
+   }}
+   span.addEventListener('click',()=>teamNameClick(ti,ni));
+   let timer=null,pointer=null,pressed=false;
+   span.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse')return;pointer={x:e.clientX,y:e.clientY};timer=setTimeout(()=>{timer=null;pressed=true;selectedTeamMember={ti,ni};renderTeams();teamNotice('이동할 파트나 다른 이름을 선택하세요.')},480)});
+   span.addEventListener('pointermove',e=>{if(timer&&pointer&&Math.hypot(e.clientX-pointer.x,e.clientY-pointer.y)>12){clearTimeout(timer);timer=null}});
+   for(const type of ['pointerup','pointercancel','pointerleave'])span.addEventListener(type,()=>{if(timer){clearTimeout(timer);timer=null}});
+   chip.addEventListener('dragstart',e=>{if(e.target.closest('button')){e.preventDefault();return}draggingTeamMember={ti,ni};e.dataTransfer.setData('text/plain',name);e.dataTransfer.effectAllowed='move'});
+   chip.addEventListener('dragover',e=>{if(draggingTeamMember){e.preventDefault();chip.classList.add('drag-over')}});
+   chip.addEventListener('dragleave',()=>chip.classList.remove('drag-over'));
+   chip.addEventListener('drop',e=>{if(draggingTeamMember){e.preventDefault();e.stopPropagation();const d=draggingTeamMember;draggingTeamMember=null;moveTeamMember(d.ti,d.ni,ti,ni)}});
+   chip.addEventListener('dragend',()=>{draggingTeamMember=null});
+   members.appendChild(chip);
+  });
+  row.addEventListener('dragover',e=>{if(draggingTeamRow!==null||draggingTeamMember){e.preventDefault();row.classList.add('drop-ready')}});
+  row.addEventListener('dragleave',e=>{if(!row.contains(e.relatedTarget))row.classList.remove('drop-ready')});
+  row.addEventListener('drop',e=>{e.preventDefault();row.classList.remove('drop-ready');if(draggingTeamRow!==null){const d=draggingTeamRow;draggingTeamRow=null;moveTeamRow(d,ti)}else if(draggingTeamMember){const d=draggingTeamMember;draggingTeamMember=null;moveTeamMember(d.ti,d.ni,ti)}});
+  row.appendChild(members);root.appendChild(row);
+ });
+ renderTeamAssignment();
+}
+function switchRosterTab(tab){rosterTab=tab;document.getElementById('instrumentPanel').classList.toggle('hidden',tab!=='instrument');document.getElementById('teamPanel').classList.toggle('hidden',tab!=='team');
+ document.getElementById('instrumentTab').classList.toggle('active',tab==='instrument');document.getElementById('teamTab').classList.toggle('active',tab==='team');
+ document.getElementById('instrumentTab').classList.toggle('secondary',tab!=='instrument');document.getElementById('teamTab').classList.toggle('secondary',tab!=='team');
+ if(tab==='team')renderTeams();else renderRoster();
+}
+document.getElementById('instrumentTab').addEventListener('click',()=>switchRosterTab('instrument'));
+document.getElementById('teamTab').addEventListener('click',()=>switchRosterTab('team'));
+document.getElementById('assignTeam').addEventListener('click',()=>{
+ const team=document.getElementById('teamAssignment').value,inst=document.getElementById('teamInstrument').value;
+ const field=document.getElementById('newTeamPerson'),name=field.value.trim();
+ const teamIndex=TEAM_ROSTER.findIndex(x=>x[0]===team),instIndex=ROSTER.findIndex(x=>x[0]===inst);
+ if(teamIndex<0||instIndex<0)return;
+ if(!name||/\s|\//.test(name)){alert('추가할 이름을 확인하세요. 이름에는 공백이나 /를 사용할 수 없습니다.');return}
+ if(TEAM_ROSTER.some(([,names])=>names.split(/\s+/).includes(name))){alert('이미 파트별 명단에 등록된 인원입니다.');return}
+ const already=PEOPLE.some(p=>cleanName(p.name)===cleanName(name));
+ if(!already){ROSTER[instIndex][1]=[ROSTER[instIndex][1],name].filter(Boolean).join(' ')}
+ TEAM_ROSTER[teamIndex][1]=[TEAM_ROSTER[teamIndex][1],name].filter(Boolean).join(' ');
+ field.value='';
+ if(!already)commitRoster(`${name} 님을 ${team}에 추가하고 악기별 명단에도 등록했습니다.`,inst);
+ commitTeams(`${name} 님을 ${team}에 추가했습니다.`);
+});
+document.getElementById('newTeamPerson').addEventListener('keydown',e=>{if(e.key==='Enter')document.getElementById('assignTeam').click()});
+
+/* 화요일 군악대 주일 예배위원 제외: 해당 모임, 해당 날짜에만 적용 */
+function sundayForDate(){
+ const [y,m,d]=state.date.split('-').map(Number),dt=new Date(y,m-1,d);
+ const distance=(7-dt.getDay())%7;dt.setDate(dt.getDate()+distance);
+ return `${dt.getMonth()+1}/${dt.getDate()}`;
+}
+function renderSunday(){
+ const enabled=activeMeeting==='tue-army';document.getElementById('sundaySection').classList.toggle('hidden',!enabled);
+ if(!enabled)return;
+ document.getElementById('sundayTitle').textContent=sundayForDate()+' 주일 예배위원 제외';
+ document.getElementById('sundayPaste').value=(state.excludedSunday||[]).join('\n');
+ renderSundayCount();
+}
+function renderSundayCount(){
+ document.getElementById('sundayCount').textContent=`제외 ${(state.excludedSunday||[]).filter(n=>PEOPLE.some(p=>p.name===n)).length}명 / 출결 대상 ${attendancePeople().length}명`;
+}
+document.getElementById('applySunday').addEventListener('click',()=>{
+ const raw=document.getElementById('sundayPaste').value.trim();
+ const tokens=raw.split(/[\s,，;|]+/).map(x=>x.trim().replace(/\/$/,'')).filter(Boolean);
+ const known=new Map(PEOPLE.map(p=>[cleanName(p.name),p.name]));
+ const names=new Set(),unknown=[];
+ for(const item of tokens){const name=known.get(cleanName(item));if(name)names.add(name);else unknown.push(item)}
+ state.excludedSunday=[...names];save();renderSunday();renderResults();
+ messageTo('sundayMessage',`${names.size}명 제외 지정 완료.`+(unknown.length?' 현재 군악대 명단에 없는 항목: '+unknown.join(', '):''),!unknown.length);
+});
+
+/* 모임별 명단/팀명단/출결/출력 제목 전환 */
+function switchMeeting(next){
+ if(!MEETING_LABELS[next]||next===activeMeeting)return;
+ save();saveRoster();saveTeamRoster();saveTemplateStorage();
+ const currentDate=state.date;
+ activeMeeting=next;ROSTER.splice(0,ROSTER.length,...cloneRows(MEETING_DEFAULTS[next]));
+ loadRoster();loadTeamRoster();loadTemplate();state.date=currentDate;load();
+ selectedRoster=null;selectedInstrument=null;draggingRoster=null;draggingInstrument=null;
+ selectedTeamMember=null;selectedTeamRow=null;draggingTeamMember=null;draggingTeamRow=null;
+ document.getElementById('meetingSelect').value=next;
+ document.getElementById('bulkInput').value='';refreshBulkExample();document.getElementById('bulkMessage').classList.add('hidden');
+ document.getElementById('rosterMessage').classList.add('hidden');document.getElementById('teamMessage').classList.add('hidden');
+ document.getElementById('sundayPaste').value='';document.getElementById('sundayMessage').classList.add('hidden');
+ selectedReason=null;refreshInstrumentSelect();renderRoster();renderTeams();renderReasons();renderSunday();renderResults();save();
+}
+const meetingSelect=document.getElementById('meetingSelect');
+for(const [id,label] of Object.entries(MEETING_LABELS)){const opt=document.createElement('option');opt.value=id;opt.textContent=label;meetingSelect.appendChild(opt)}
+meetingSelect.value=activeMeeting;meetingSelect.addEventListener('change',()=>switchMeeting(meetingSelect.value));
 renderReasons();
+renderTeams();
+renderSunday();
 renderResults();
+const previousMeeting=localStorage.getItem(MULTI_PREFIX+'-last-meeting');
+if(previousMeeting&&MEETING_LABELS[previousMeeting]&&previousMeeting!==activeMeeting)switchMeeting(previousMeeting);
 </script></body></html>
